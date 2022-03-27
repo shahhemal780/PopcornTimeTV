@@ -101,7 +101,7 @@ struct SubtitlesView: View {
             ScrollViewReader { scroll in
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 15) {
-                        ForEach(viewModel.delays) { delay in
+                        ForEach(viewModel.delays, id: \.self) { delay in
                             button(text: viewModel.delayText(delay: delay), isSelected: delay == currentDelay, onFocus: {
                                 withAnimation {
                                     scroll.scrollTo(delay, anchor: .center)

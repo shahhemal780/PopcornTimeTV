@@ -72,13 +72,13 @@ struct InfoView: View {
                     Text(Image($0).renderingMode(.template))
                 }
             return HStack(alignment: .center, spacing: 25) {
-                ForEach(0..<items.count) { item in
+                ForEach(0..<items.count, id: \.self) { item in
                     items[item]
                 }
             }
         } else {
             return HStack(alignment: .center, spacing: 25) {
-                ForEach(0..<[""].count) { item in
+                ForEach(0..<[""].count, id: \.self) { item in
                     Text("")
                 }
             }

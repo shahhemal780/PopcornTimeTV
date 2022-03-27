@@ -15,7 +15,7 @@ struct StarRatingView: View {
     var body: some View {
         let intRating: Int = Int(floor(rating))
         HStack(spacing: 5) {
-            ForEach(0..<count) { index in
+            ForEach(0..<count, id: \.self) { index in
                 switch index {
                 case ..<intRating:
                     Image("Star Full")

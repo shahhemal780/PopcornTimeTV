@@ -64,7 +64,7 @@ struct AudioView: View {
             ScrollViewReader { scroll in
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 15) {
-                        ForEach(delays) { delay in
+                        ForEach(delays, id: \.self) { delay in
                             button(text: delayText(delay: delay), isSelected: delay == currentDelay, onFocus: {
                                 withAnimation {
                                     scroll.scrollTo(delay, anchor: .center)
