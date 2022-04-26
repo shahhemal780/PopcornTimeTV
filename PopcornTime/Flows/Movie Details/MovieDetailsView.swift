@@ -100,7 +100,6 @@ struct MovieDetailsView: View, MediaPosterLoader {
             .background(
                 KFImage(viewModel.backgroundUrl)
                     .resizable()
-                    .loadImmediately()
                     .aspectRatio(contentMode: .fill)
                     .padding(0)
             )
