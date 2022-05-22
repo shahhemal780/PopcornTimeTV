@@ -11,19 +11,13 @@ PopcornTimeTV is an Apple TV, iPhone and iPad application to torrent movies and 
 
 ## Compile yourself?
 
-First, you need to install [bundler](https://bundler.io) to your computer with the `gem install bundler` command.
-
-Then you can use [CocoaPods](http://cocoapods.org/) to install dependencies.
-
 Build instructions:
 
 ``` bash
-$ git clone https://github.com/PopcornTimeTV/PopcornTimeTV.git
+$ git clone https://github.com/alextud/PopcornTimeTV.git
 $ cd PopcornTimeTV/
-$ bundle install
-$ bundle exec pod repo update
-$ bundle exec pod install
-$ open PopcornTime.xcworkspace
+$ ./get-vlc-frameworks.sh
+$ open PopcornTime.xcodeproj
 ```
 
 ## License
