@@ -167,9 +167,11 @@ struct MovieDetailsView: View, MediaPosterLoader {
             DownloadButton(viewModel: viewModel.downloadModel)
         }
         .buttonStyle(TVButtonStyle(onFocus: {
+            #if os(tvOS)
             withAnimation {
                 scroll?.scrollTo(section1, anchor: .top)
             }
+            #endif
         }))
     }
     

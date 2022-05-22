@@ -73,9 +73,11 @@ struct ShowDetailsView: View, MediaPosterLoader {
                     LazyVStack(alignment: .center) {
                         if show.episodes.count > 0 {
                             EpisodesView(show: viewModel.show, episodes: viewModel.seasonEpisodes(), currentSeason: viewModel.currentSeason, currentEpisode: viewModel.latestUnwatchedEpisode, onFocus: {
+                                #if os(tvOS)
                                 withAnimation() {
                                     scroll.scrollTo(section2, anchor: .top)
                                 }
+                                #endif
                             })
                             #if os(tvOS)
                             .focusSection()
@@ -191,9 +193,11 @@ struct ShowDetailsView: View, MediaPosterLoader {
             }
         }
         .buttonStyle(TVButtonStyle(onFocus: {
+            #if os(tvOS)
             withAnimation {
                 scroll?.scrollTo(section1, anchor: .top)
             }
+            #endif
         }))
     }
     
