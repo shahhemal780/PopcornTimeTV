@@ -22,7 +22,7 @@ jobs:
     - name: Compile
       run: |
         xcodebuild archive \
-          -workspace PopcornTime.xcworkspace \
+          -workspace PopcornTime.xcodeproj \
           -scheme PopcornTime\ \(tvOS\) \
           -configuration Release \
           CODE_SIGN_IDENTITY= \
@@ -66,7 +66,7 @@ jobs:
     - name: Compile
       run: |
         xcodebuild archive \
-          -workspace PopcornTime.xcworkspace \
+          -workspace PopcornTime.xcodeproj \
           -scheme PopcornTime\ \(iOS\) \
           -configuration Release \
           CODE_SIGN_IDENTITY= \
