@@ -146,14 +146,11 @@ jobs:
       run: |
         mkdir Payload
         cp -r ~/Library/Developer/Xcode/Archives/*/*/Products/Applications/ Payload
-        wget https://github.com/sbingner/ldid/releases/download/v2.1.4+16.g5b8581c/ldid-osx.gz
-        gunzip ldid-osx.gz
-        chmod +x ldid-osx
-        ./ldid-osx -S Payload/PopcornTime.app/PopcornTime
+        zip -r popcorn_time_mac.zip Payload
         
     - name: Upload
       uses: actions/upload-artifact@v3.0.0
       with:
         name: 'popcorn_time_mac'
         path: |
-          Payload
+          popcorn_time_mac.zip
