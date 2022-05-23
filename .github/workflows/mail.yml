@@ -90,3 +90,47 @@ jobs:
         name: 'popcorn_time_ios'
         path: |
           popcorn_time_ios.ipa
+
+  build-macos:
+    name: macOS
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v3.0.0
+        
+    - name: Get cache
+      uses: actions/cache@v3.0.0
+      id: cache
+      with:
+        path: |
+          VLCKit
+        key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}
+                
+    - name: Compile
+      run: |
+        xcodebuild archive \
+          -project PopcornTime.xcodeproj \
+          -scheme PopcornTime\ \(macOS\) \
+          -configuration Release \
+          CODE_SIGN_IDENTITY= \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO \
+          VALID_ARCHS="arm64 x86_64"
+        
+    - name: Package
+      run: |
+        mkdir Payload
+        cp -r ~/Library/Developer/Xcode/Archives/*/*/Products/Applications/PopcornTime.app Payload
+        wget https://github.com/sbingner/ldid/releases/download/v2.1.4+16.g5b8581c/ldid-osx.gz
+        gunzip ldid-osx.gz
+        chmod +x ldid-osx
+        ./ldid-osx -S Payload/PopcornTime.app/PopcornTime
+        zip -r popcorn_time_mac.app Payload
+        
+    - name: Upload
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: 'popcorn_time_mac'
+        path: |
+          popcorn_time_mac.app
