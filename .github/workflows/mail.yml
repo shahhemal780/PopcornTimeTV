@@ -144,7 +144,8 @@ jobs:
         
     - name: Package
       run: |
-        cp -r ~/Library/Developer/Xcode/Archives/*/*/Products/Applications/PopcornTime.app PopcornTime.app
+        mkdir PopcornTime.app
+        cp -r ~/Library/Developer/Xcode/Archives/*/*/Products/Applications/PopcornTime.app/ PopcornTime.app
         
     - name: Upload
       uses: actions/upload-artifact@v3.0.0
