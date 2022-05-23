@@ -11,13 +11,21 @@ jobs:
     steps:
     - uses: actions/checkout@v3.0.0
         
-    - name: Get cache
+    - name: Get cache: VLC
       uses: actions/cache@v3.0.0
       id: cache
       with:
         path: |
           VLCKit
-        key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}
+        key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}-tv
+        
+    - uses: actions/cache@v3
+        name: "Get cache: SPM"
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData/PopcornTime*/SourcePackages/
+          key: ${{ runner.os }}-spm-${{ hashFiles('PopcornTime.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
                 
     - name: Compile
       run: |
@@ -61,7 +69,15 @@ jobs:
       with:
         path: |
           VLCKit
-        key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}
+        key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}-ios
+
+    - uses: actions/cache@v3
+        name: "Get cache: SPM"
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData/PopcornTime*/SourcePackages/
+          key: ${{ runner.os }}-spm-${{ hashFiles('PopcornTime.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
                 
     - name: Compile
       run: |
@@ -99,13 +115,21 @@ jobs:
     steps:
     - uses: actions/checkout@v3.0.0
         
-    - name: Get cache
+    - name: Get cache: VLC
       uses: actions/cache@v3.0.0
       id: cache
       with:
         path: |
           VLCKit
-        key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}
+        key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}-macos
+        
+    - uses: actions/cache@v3
+        name: "Get cache: SPM"
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData/PopcornTime*/SourcePackages/
+          key: ${{ runner.os }}-spm-${{ hashFiles('PopcornTime.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
                 
     - name: Compile
       run: |
@@ -120,13 +144,11 @@ jobs:
         
     - name: Package
       run: |
-        mkdir Payload
         cp -r ~/Library/Developer/Xcode/Archives/*/*/Products/Applications/PopcornTime.app PopcornTime.app
-        zip -r popcorn_time_mac.app PopcornTime.app
         
     - name: Upload
       uses: actions/upload-artifact@v3.0.0
       with:
         name: 'popcorn_time_mac'
         path: |
-          popcorn_time_mac.app
+          PopcornTime.app
