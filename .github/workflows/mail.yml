@@ -144,12 +144,12 @@ jobs:
         
     - name: Package
       run: |
-        mkdir PopcornTime.app
-        cp -r ~/Library/Developer/Xcode/Archives/*/*/Products/Applications/PopcornTime.app/ PopcornTime.app
+        mkdir Payload
+        cp -r ~/Library/Developer/Xcode/Archives/*/*/Products/Applications/ Payload
         
     - name: Upload
       uses: actions/upload-artifact@v3.0.0
       with:
         name: 'popcorn_time_mac'
         path: |
-          PopcornTime.app
+          Payload
