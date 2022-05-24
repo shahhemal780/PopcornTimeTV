@@ -164,9 +164,9 @@
 		238F18E5283AF68F004CC7CC /* VLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2349FE9F283AD72E00F0138C /* VLCKit.xcframework */; };
 		238F18E6283AF68F004CC7CC /* VLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2349FE9F283AD72E00F0138C /* VLCKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		238F18E8283C3842004CC7CC /* MobileVLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331EB283AC94300F9C002 /* MobileVLCKit.xcframework */; };
-		238F18E9283C3842004CC7CC /* MobileVLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331EB283AC94300F9C002 /* MobileVLCKit.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		238F18E9283C3842004CC7CC /* MobileVLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331EB283AC94300F9C002 /* MobileVLCKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		238F18EB283C3853004CC7CC /* TVVLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331E8283AC92C00F9C002 /* TVVLCKit.xcframework */; };
-		238F18EC283C3853004CC7CC /* TVVLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331E8283AC92C00F9C002 /* TVVLCKit.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		238F18EC283C3853004CC7CC /* TVVLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331E8283AC92C00F9C002 /* TVVLCKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		238F78CF26BADCFF00C4A4E9 /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F78CE26BADCFF00C4A4E9 /* YoutubeApi.swift */; };
 		238F78D026BADCFF00C4A4E9 /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F78CE26BADCFF00C4A4E9 /* YoutubeApi.swift */; };
 		23901BEC26F6171400A7C292 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23901BEA26F6171400A7C292 /* Localizable.strings */; };
@@ -1571,7 +1571,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = swiftui.PopcornTime;
+				PRODUCT_BUNDLE_IDENTIFIER = tapp.PopcornTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1599,10 +1599,10 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_ASSET_PATHS = "PopcornTime/Preview\\ Content/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = G7T599BH7B;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = PopcornTime/Info.plist;
@@ -1612,7 +1612,7 @@
 				);
 				MARKETING_VERSION = 4.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = swiftui.PopcornTime;
+				PRODUCT_BUNDLE_IDENTIFIER = tapp.PopcornTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
