@@ -151,6 +151,26 @@ struct PlayerView: View {
                 .transition(.opacity)
             #endif
         }
+        
+        #if os(iOS) || os(macOS)
+        // add keyboard shortcuts
+        ZStack {
+            Button {
+                viewModel.rewind()
+            } label: { }
+                .keyboardShortcut(.leftArrow, modifiers: [])
+            Button {
+                viewModel.fastForward()
+            } label: { }
+            .keyboardShortcut(.rightArrow, modifiers: [])
+            Button {
+                viewModel.playandPause()
+                viewModel.toggleControlsVisible()
+            } label: { }
+            .keyboardShortcut(" ", modifiers: [])
+        }
+        .opacity(0)
+        #endif
     }
     
     @ViewBuilder
