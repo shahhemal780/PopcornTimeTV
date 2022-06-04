@@ -131,6 +131,11 @@ class PreloadTorrentViewModel: ObservableObject {
                     errorBlock(error)
                 }
             }, selectFileToStream: { fileNames, fileSizes in
+                let description = zip(fileNames, fileSizes)
+                    .map {"\($0) - \(ByteCountFormatter.string(fromByteCount:Int64(truncating: $1), countStyle: .binary))"}
+                    .joined(separator:"\n")
+                print("torrent files:", description)
+                
                 return self.selectFileToStream(fileNames: fileNames, fileSizes: fileSizes)
             })
         } else {

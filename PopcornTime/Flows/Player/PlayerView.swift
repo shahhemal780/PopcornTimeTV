@@ -183,7 +183,10 @@ struct PlayerView: View {
                                   audioProfile: viewModel.audioController.audioProfileBinding,
                                   subtitleDelay: viewModel.subtitleController.subtitleDelayBinding,
                                   subtitleEncoding: viewModel.subtitleController.subtitleEncodingBinding,
-                                  subtitle: viewModel.subtitleController.subtitleBinding)
+                                  subtitle: viewModel.subtitleController.subtitleBinding,
+                                  audioTrackIndex: viewModel.audioController.audioTrackBinding,
+                                  audioTracks: viewModel.audioController.audioTracksNames()
+            )
                 #if os(tvOS)
                 .prefersDefaultFocus(in: namespace)
                 .onExitCommand(perform: {
