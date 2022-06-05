@@ -21,9 +21,18 @@ struct PlayerControlsView: View {
                 .padding(.top, 20)
             #endif
             Spacer()
-            bottomView
-                .padding([.leading, .trailing], 20)
-                .padding(.bottom, 20)
+            #if os(iOS)
+            let isPortrait = UIScreen.main.bounds.width < UIScreen.main.bounds.height
+            if UIDevice.current.userInterfaceIdiom == .phone, isPortrait {
+                bottomViewCompact
+                    .padding([.leading, .trailing], 20)
+                    .padding(.bottom, 20)
+            } else {
+                bottomView
+                    .padding([.leading, .trailing], 20)
+                    .padding(.bottom, 20)
+            }
+            #endif
         }
         .accentColor(.white)
     }
@@ -81,6 +90,55 @@ struct PlayerControlsView: View {
         #else
         .frame(height: 45)
         #endif
+        .frame(maxWidth: 750)
+        .padding([.leading, .trailing], 10)
+        .background {
+            Color.clear
+                .background(.regularMaterial)
+                .cornerRadius(10)
+        }
+//        .background(.regularMaterial)
+//        .cornerRadius(10)
+        .buttonStyle(.plain)
+    }
+    
+    @ViewBuilder
+    var bottomViewCompact: some View {
+        VStack(spacing: 20) {
+            HStack(spacing: 10) {
+                progressView
+            }
+            HStack(spacing: 10) {
+                Text(viewModel.progress.isScrubbing ? viewModel.progress.scrubbingTime : viewModel.progress.elapsedTime)
+                    .monospacedDigit()
+                    .foregroundColor(.gray)
+                    .frame(minWidth: 40)
+                Spacer()
+                rewindButton
+                playButton
+                    .padding([.leading, .trailing], 4)
+                forwardButton
+                Spacer()
+                Text(viewModel.progress.remainingTime)
+                    .monospacedDigit()
+                    .foregroundColor(.gray)
+                    .frame(minWidth: 40)
+            }
+//            HStack(spacing: 10) {
+//                rewindButton
+//                playButton
+//                    .padding([.leading, .trailing], 10)
+//                forwardButton
+//                Spacer()
+//                let time = viewModel.progress.isScrubbing ? viewModel.progress.scrubbingTime : viewModel.progress.elapsedTime
+//                Text(time + " / " + viewModel.progress.remainingTime)
+//                    .monospacedDigit()
+//                    .foregroundColor(.gray)
+//                    .frame(minWidth: 40)
+//            }
+        }
+        .tint(.white)
+        .frame(height: 100)
         .frame(maxWidth: 750)
         .padding([.leading, .trailing], 10)
         .background {

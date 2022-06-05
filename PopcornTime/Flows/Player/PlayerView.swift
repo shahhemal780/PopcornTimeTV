@@ -95,6 +95,7 @@ struct PlayerView: View {
                     }
                 }
             #else
+                .ignoresSafeArea()
                 .onTapGesture {
                     withAnimation {
                         if viewModel.showInfo == true {
@@ -152,7 +153,7 @@ struct PlayerView: View {
             #endif
         }
         
-        #if os(iOS) || os(macOS)
+        #if os(macOS)
         // add keyboard shortcuts
         ZStack {
             Button {

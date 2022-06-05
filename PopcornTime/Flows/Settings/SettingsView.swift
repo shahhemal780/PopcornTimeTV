@@ -37,6 +37,7 @@ struct SettingsView: View {
             #if os(tvOS) || os(iOS)
             Image("Icon")
                 .padding(.leading, theme.iconLeading)
+                .hideIfCompactSize()
             #endif
             List() {
                 Section(header: sectionHeader("Player")) {
@@ -400,7 +401,7 @@ extension SettingsView {
     struct Theme {
         let fontSize: CGFloat = value(tvOS: 38, macOS: 20)
         let hStackSpacing: CGFloat = value(tvOS: 300, macOS: 50)
-        let iconLeading: CGFloat = value(tvOS: 100, macOS: 50)
+        var iconLeading: CGFloat { value(tvOS: 100, macOS: 50, compactSize: 0) }
     }
 }
 

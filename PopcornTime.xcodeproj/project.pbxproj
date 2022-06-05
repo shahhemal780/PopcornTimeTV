@@ -21,6 +21,8 @@
 		2304532626BAFB1A0050BCB8 /* DownloadButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391BE7C268475A200576CAD /* DownloadButtonViewModel.swift */; };
 		2304532726BB30C60050BCB8 /* ShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343A7682688AEFC00B824E7 /* ShowsViewModel.swift */; };
 		230C082526BD3D3C00989E7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D990E321DC4F028005CDE34 /* Images.xcassets */; };
+		230C65FF284B207F00CA59F8 /* VLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2349FE9F283AD72E00F0138C /* VLCKit.xcframework */; };
+		230C6600284B207F00CA59F8 /* VLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2349FE9F283AD72E00F0138C /* VLCKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23166C012694EE6E00D87AD0 /* TopShelf.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 23E4976626947E1300175DEE /* TopShelf.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		232BB51E269450B3005448AE /* XCDYouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 232BB51D269450B3005448AE /* XCDYouTubeKit */; };
 		232BB5242694562C005448AE /* PopcornTorrent in Frameworks */ = {isa = PBXBuildFile; productRef = 232BB5232694562C005448AE /* PopcornTorrent */; };
@@ -161,8 +163,6 @@
 		2388FD642691EC1900B51201 /* ShowDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388FD632691EC1900B51201 /* ShowDetailsViewModel.swift */; };
 		2388FD652691EEA900B51201 /* Show+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F9E441E705BD100860852 /* Show+Extension.swift */; };
 		2388FD672692019E00B51201 /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388FD662692019E00B51201 /* EpisodeView.swift */; };
-		238F18E5283AF68F004CC7CC /* VLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2349FE9F283AD72E00F0138C /* VLCKit.xcframework */; };
-		238F18E6283AF68F004CC7CC /* VLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2349FE9F283AD72E00F0138C /* VLCKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		238F18E8283C3842004CC7CC /* MobileVLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331EB283AC94300F9C002 /* MobileVLCKit.xcframework */; };
 		238F18E9283C3842004CC7CC /* MobileVLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331EB283AC94300F9C002 /* MobileVLCKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		238F18EB283C3853004CC7CC /* TVVLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F331E8283AC92C00F9C002 /* TVVLCKit.xcframework */; };
@@ -367,6 +367,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		230C6601284B207F00CA59F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				230C6600284B207F00CA59F8 /* VLCKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23121F1F2694B6AC00D8126B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,17 +406,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				238F18EC283C3853004CC7CC /* TVVLCKit.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		238F18E7283AF68F004CC7CC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				238F18E6283AF68F004CC7CC /* VLCKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,7 +601,7 @@
 			files = (
 				237ECA2D26B848B900EE8B46 /* PopcornTorrent in Frameworks */,
 				237ECA3B26B8491400EE8B46 /* XCDYouTubeKit in Frameworks */,
-				238F18E5283AF68F004CC7CC /* VLCKit.xcframework in Frameworks */,
+				230C65FF284B207F00CA59F8 /* VLCKit.xcframework in Frameworks */,
 				237ECA2B26B8486F00EE8B46 /* Kingfisher in Frameworks */,
 				237ECA1726B847ED00EE8B46 /* PopcornKit in Frameworks */,
 			);
@@ -1023,7 +1023,7 @@
 				237ECA0126B8478100EE8B46 /* Sources */,
 				237ECA0226B8478100EE8B46 /* Frameworks */,
 				237ECA0326B8478100EE8B46 /* Resources */,
-				238F18E7283AF68F004CC7CC /* Embed Frameworks */,
+				230C6601284B207F00CA59F8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1664,7 +1664,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1701,7 +1701,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2037,7 +2037,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alextud/PopcornTorrent";
 			requirement = {
-				branch = master;
+				branch = v2;
 				kind = branch;
 			};
 		};

@@ -181,22 +181,20 @@ class PreloadTorrentViewModel: ObservableObject {
             return Int32(0)
         }
         
-        /// the biggest file
-        let max = fileSizes.max { $0.int64Value < $1.int64Value }
-        let maxIndex = fileSizes.firstIndex(of: max!)
-        let biggestFileIndex = Int32(maxIndex!)
+        var files = Array(zip(fileNames, fileSizes).enumerated())
         
-
-        // for series, find file with format: E01, ex first episode
+        /// for series, keep only files with format: E01
         if let episode = self.media as? Episode {
             let findByEpisode = String(format: "E%02d", episode.episode)
-            if let index = fileNames.firstIndex(where: { $0.lowercased().contains(findByEpisode.lowercased())}) {
-                return Int32(index)
-            } else if fileNames.count == 2 {
-                return biggestFileIndex
+            files = files.filter { index, item in
+                item.0.lowercased().contains(findByEpisode.lowercased())
             }
-        } else {
-            return biggestFileIndex
+        }
+        
+        /// the biggest file
+        let max = files.max { $0.element.1.int64Value < $1.element.1.int64Value  }
+        if let biggestFileIndex = max?.offset { //
+            return Int32(biggestFileIndex)
         }
         
         // let user select
