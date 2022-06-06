@@ -9,9 +9,8 @@
 import SwiftUI
 #if canImport(UIKit)
 import UIKit
-#endif
-
 var lastOrientation: UIDeviceOrientation = .unknown
+#endif
 
 func value<T>(tvOS: T, macOS: T, compactSize: T? = nil) -> T {
     #if os(tvOS)
@@ -21,18 +20,18 @@ func value<T>(tvOS: T, macOS: T, compactSize: T? = nil) -> T {
     #elseif os(iOS)
     
     if UIDevice.current.userInterfaceIdiom == .phone, let compactSize = compactSize {
-//        let isPortrait = UIScreen.main.bounds.width < UIScreen.main.bounds.height
-//        return isPortrait ? compactSize : macOS
-        var orientation = UIDevice.current.orientation
-        orientation = (orientation.isPortrait || orientation.isLandscape) ? orientation : lastOrientation
-        if orientation.isPortrait {
-            lastOrientation = orientation
-            return compactSize
-        } else if orientation.isLandscape {
-            lastOrientation = orientation
-            return macOS
-        }
-        return compactSize
+        let isPortrait = UIScreen.main.bounds.width < UIScreen.main.bounds.height
+        return isPortrait ? compactSize : macOS
+//        var orientation = UIDevice.current.orientation
+//        orientation = (orientation.isPortrait || orientation.isLandscape) ? orientation : lastOrientation
+//        if orientation.isPortrait {
+//            lastOrientation = orientation
+//            return compactSize
+//        } else if orientation.isLandscape {
+//            lastOrientation = orientation
+//            return macOS
+//        }
+//        return compactSize
     } else {
         return macOS
     }
@@ -64,11 +63,15 @@ extension View {
     
     @ViewBuilder
     func hideIfCompactSize() -> some View {
+        #if os(iOS)
         let isPortrait = UIScreen.main.bounds.width < UIScreen.main.bounds.height
         if UIDevice.current.userInterfaceIdiom == .phone, isPortrait {
             
         } else {
             self
         }
+        #else
+        self
+        #endif
     }
 }

@@ -21,18 +21,9 @@ struct PlayerControlsView: View {
                 .padding(.top, 20)
             #endif
             Spacer()
-            #if os(iOS)
-            let isPortrait = UIScreen.main.bounds.width < UIScreen.main.bounds.height
-            if UIDevice.current.userInterfaceIdiom == .phone, isPortrait {
-                bottomViewCompact
-                    .padding([.leading, .trailing], 20)
-                    .padding(.bottom, 20)
-            } else {
-                bottomView
-                    .padding([.leading, .trailing], 20)
-                    .padding(.bottom, 20)
-            }
-            #endif
+            bottomView
+                .padding([.leading, .trailing], 20)
+                .padding(.bottom, 20)
         }
         .accentColor(.white)
     }
@@ -66,6 +57,20 @@ struct PlayerControlsView: View {
     
     @ViewBuilder
     var bottomView: some View {
+        #if os(iOS)
+        let isPortrait = UIScreen.main.bounds.width < UIScreen.main.bounds.height
+        if UIDevice.current.userInterfaceIdiom == .phone, isPortrait {
+            bottomViewCompact
+        } else {
+            bottomViewRegular
+        }
+        #else
+        bottomViewRegular
+        #endif
+    }
+    
+    @ViewBuilder
+    var bottomViewRegular: some View {
         HStack(spacing: 10) {
             rewindButton
             playButton
