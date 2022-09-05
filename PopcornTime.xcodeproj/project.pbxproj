@@ -24,7 +24,6 @@
 		230C65FF284B207F00CA59F8 /* VLCKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2349FE9F283AD72E00F0138C /* VLCKit.xcframework */; };
 		230C6600284B207F00CA59F8 /* VLCKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2349FE9F283AD72E00F0138C /* VLCKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23166C012694EE6E00D87AD0 /* TopShelf.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 23E4976626947E1300175DEE /* TopShelf.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		232BB51E269450B3005448AE /* XCDYouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 232BB51D269450B3005448AE /* XCDYouTubeKit */; };
 		232BB5242694562C005448AE /* PopcornTorrent in Frameworks */ = {isa = PBXBuildFile; productRef = 232BB5232694562C005448AE /* PopcornTorrent */; };
 		232BB527269456BF005448AE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 232BB526269456BF005448AE /* Kingfisher */; };
 		23313B00267E374F00774A85 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313AFF267E374F00774A85 /* App.swift */; };
@@ -138,7 +137,6 @@
 		237ECA2B26B8486F00EE8B46 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 237ECA2A26B8486F00EE8B46 /* Kingfisher */; };
 		237ECA2D26B848B900EE8B46 /* PopcornTorrent in Frameworks */ = {isa = PBXBuildFile; productRef = 237ECA2C26B848B900EE8B46 /* PopcornTorrent */; };
 		237ECA2E26B848F000EE8B46 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F15C8E26B1A8F800E0FE60 /* ErrorView.swift */; };
-		237ECA3B26B8491400EE8B46 /* XCDYouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 237ECA3A26B8491400EE8B46 /* XCDYouTubeKit */; };
 		237ECA3D26B84A3600EE8B46 /* JSONCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313B44267E3DF600774A85 /* JSONCache.swift */; };
 		237ECA3E26B84A3600EE8B46 /* CodableCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313B46267E3DF600774A85 /* CodableCaching.swift */; };
 		237ECA3F26B84A3600EE8B46 /* JSONDecoder+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313B45267E3DF600774A85 /* JSONDecoder+KeyPath.swift */; };
@@ -244,7 +242,6 @@
 		23A2BDB226BEDA5F004B864E /* PopcornKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23A2BDB126BEDA5F004B864E /* PopcornKit */; };
 		23A2BDB426BEDA5F004B864E /* PopcornTorrent in Frameworks */ = {isa = PBXBuildFile; productRef = 23A2BDB326BEDA5F004B864E /* PopcornTorrent */; };
 		23A2BDB626BEDB2C004B864E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 23A2BDB526BEDB2C004B864E /* Kingfisher */; };
-		23A2BDB826BEDB45004B864E /* XCDYouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23A2BDB726BEDB45004B864E /* XCDYouTubeKit */; };
 		23A2BDB926BEDB58004B864E /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388FD5A268F871F00B51201 /* BannerView.swift */; };
 		23A2BDBA26BEDB73004B864E /* DownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C96EE12685B40E0056455E /* DownloadProgressView.swift */; };
 		23A2BDBB26BEDBB2004B864E /* PlainNavigationLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446AB8267EF4FE0049CC72 /* PlainNavigationLinkButton.swift */; };
@@ -577,7 +574,6 @@
 				232BB527269456BF005448AE /* Kingfisher in Frameworks */,
 				232BB5242694562C005448AE /* PopcornTorrent in Frameworks */,
 				23D2B398269586810077BBED /* Reachability in Frameworks */,
-				232BB51E269450B3005448AE /* XCDYouTubeKit in Frameworks */,
 				238F18EB283C3853004CC7CC /* TVVLCKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,7 +585,6 @@
 				23A2BDB626BEDB2C004B864E /* Kingfisher in Frameworks */,
 				23A2BDCE26BEDC09004B864E /* Reachability in Frameworks */,
 				23A2BDB426BEDA5F004B864E /* PopcornTorrent in Frameworks */,
-				23A2BDB826BEDB45004B864E /* XCDYouTubeKit in Frameworks */,
 				238F18E8283C3842004CC7CC /* MobileVLCKit.xcframework in Frameworks */,
 				23A2BDB226BEDA5F004B864E /* PopcornKit in Frameworks */,
 			);
@@ -600,7 +595,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				237ECA2D26B848B900EE8B46 /* PopcornTorrent in Frameworks */,
-				237ECA3B26B8491400EE8B46 /* XCDYouTubeKit in Frameworks */,
 				230C65FF284B207F00CA59F8 /* VLCKit.xcframework in Frameworks */,
 				237ECA2B26B8486F00EE8B46 /* Kingfisher in Frameworks */,
 				237ECA1726B847ED00EE8B46 /* PopcornKit in Frameworks */,
@@ -980,7 +974,6 @@
 			);
 			name = "PopcornTime (tvOS)";
 			packageProductDependencies = (
-				232BB51D269450B3005448AE /* XCDYouTubeKit */,
 				232BB5232694562C005448AE /* PopcornTorrent */,
 				232BB526269456BF005448AE /* Kingfisher */,
 				23507DC7269483310098CC12 /* ObjectMapper */,
@@ -1009,7 +1002,6 @@
 				23A2BDB126BEDA5F004B864E /* PopcornKit */,
 				23A2BDB326BEDA5F004B864E /* PopcornTorrent */,
 				23A2BDB526BEDB2C004B864E /* Kingfisher */,
-				23A2BDB726BEDB45004B864E /* XCDYouTubeKit */,
 				23A2BDCD26BEDC09004B864E /* Reachability */,
 			);
 			productName = "PopcornTime (iOS)";
@@ -1034,7 +1026,6 @@
 				237ECA1626B847ED00EE8B46 /* PopcornKit */,
 				237ECA2A26B8486F00EE8B46 /* Kingfisher */,
 				237ECA2C26B848B900EE8B46 /* PopcornTorrent */,
-				237ECA3A26B8491400EE8B46 /* XCDYouTubeKit */,
 			);
 			productName = "PopcornTime (macOS)";
 			productReference = 237ECA0526B8478100EE8B46 /* PopcornTime.app */;
@@ -1105,7 +1096,6 @@
 			);
 			mainGroup = 287B852B1C9873A200EEF5C8;
 			packageReferences = (
-				232BB51C269450B3005448AE /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */,
 				232BB5222694562C005448AE /* XCRemoteSwiftPackageReference "PopcornTorrent" */,
 				232BB525269456BF005448AE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				232BB52A26946B47005448AE /* XCRemoteSwiftPackageReference "ObjectMapper" */,
@@ -1543,7 +1533,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1591,7 +1581,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1630,7 +1620,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1675,7 +1665,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1713,7 +1703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1757,7 +1747,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1792,7 +1782,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1833,7 +1823,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1868,7 +1858,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -1920,7 +1910,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -2025,19 +2015,11 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		232BB51C269450B3005448AE /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hinge-agency/XCDYouTubeKit";
-			requirement = {
-				branch = "fix/issue-534-XCDYouTubeVideoErrorDomain-error-code-3";
-				kind = branch;
-			};
-		};
 		232BB5222694562C005448AE /* XCRemoteSwiftPackageReference "PopcornTorrent" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alextud/PopcornTorrent";
 			requirement = {
-				branch = v2;
+				branch = v2_1;
 				kind = branch;
 			};
 		};
@@ -2068,11 +2050,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		232BB51D269450B3005448AE /* XCDYouTubeKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 232BB51C269450B3005448AE /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */;
-			productName = XCDYouTubeKit;
-		};
 		232BB5232694562C005448AE /* PopcornTorrent */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 232BB5222694562C005448AE /* XCRemoteSwiftPackageReference "PopcornTorrent" */;
@@ -2107,11 +2084,6 @@
 			package = 232BB5222694562C005448AE /* XCRemoteSwiftPackageReference "PopcornTorrent" */;
 			productName = PopcornTorrent;
 		};
-		237ECA3A26B8491400EE8B46 /* XCDYouTubeKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 232BB51C269450B3005448AE /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */;
-			productName = XCDYouTubeKit;
-		};
 		23A2BDB126BEDA5F004B864E /* PopcornKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PopcornKit;
@@ -2125,11 +2097,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 232BB525269456BF005448AE /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		23A2BDB726BEDB45004B864E /* XCDYouTubeKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 232BB51C269450B3005448AE /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */;
-			productName = XCDYouTubeKit;
 		};
 		23A2BDCD26BEDC09004B864E /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -8,7 +8,6 @@
 
 import SwiftUI
 import AVKit
-import XCDYouTubeKit
 import PopcornKit
 
 class TrailerButtonViewModel: ObservableObject {
@@ -80,31 +79,6 @@ class TrailerButtonViewModel: ObservableObject {
         }
         
         return url
-        
-//        XCDYouTubeClient.default().getVideoWithIdentifier(id) { (video, error) in
-//            guard let streamUrls = video?.streamURLs, let qualities = Array(streamUrls.keys) as? [UInt] else {
-//                self.error.wrappedValue = error
-//                return
-//            }
-//
-//            let preferredVideoQualities = [XCDYouTubeVideoQuality.HD720.rawValue, XCDYouTubeVideoQuality.medium360.rawValue, XCDYouTubeVideoQuality.small240.rawValue]
-//            var videoUrl: URL? = nil
-//
-//            for quality in preferredVideoQualities {
-//                if let index = qualities.firstIndex(of: quality) {
-//                    videoUrl = Array(streamUrls.values)[index]
-//                    break
-//                }
-//            }
-//
-//            guard let url = videoUrl else {
-//                self.error.wrappedValue = error
-//                return
-//            }
-//
-//            self.trailerUrl = url
-//            completion(url)
-//        }
     }
     
     private func makeMetadataItem(_ identifier: AVMetadataIdentifier, value: Any) -> AVMetadataItem {
