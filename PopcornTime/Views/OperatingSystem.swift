@@ -7,10 +7,10 @@
 //
 
 import SwiftUI
-#if canImport(UIKit)
-import UIKit
-var lastOrientation: UIDeviceOrientation = .unknown
-#endif
+//#if canImport(UIKit)
+//import UIKit
+//var lastOrientation: UIDeviceOrientation = .unknown
+//#endif
 
 func value<T>(tvOS: T, macOS: T, compactSize: T? = nil) -> T {
     #if os(tvOS)
