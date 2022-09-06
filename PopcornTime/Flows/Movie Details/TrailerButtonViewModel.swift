@@ -66,7 +66,7 @@ class TrailerButtonViewModel: ObservableObject {
         
         let video = try await YoutubeApi.getVideo(id: id)
         let preferredVideoQualities = ["1080p", "720p", "360p"]
-        let formats = video.streamingData.formats
+        let formats = video.streamingData.adaptiveFormats ?? video.streamingData.formats ?? []
         for quality in preferredVideoQualities {
             if let index = formats.firstIndex(where: {$0.qualityLabel == quality}) {
                 self.trailerUrl = formats[index].url
@@ -74,7 +74,7 @@ class TrailerButtonViewModel: ObservableObject {
             }
         }
         
-        guard let url = trailerUrl else {
+        guard let url = trailerUrl ?? video.streamingData.hlsManifestUrl else {
             throw notFoundError
         }
         
