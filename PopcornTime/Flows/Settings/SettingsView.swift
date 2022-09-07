@@ -44,6 +44,9 @@ struct SettingsView: View {
                     themeSongVolumeButton
                     removeCacheOnPlayerExitButton
                     qualityAlertButton
+                    if viewModel.hasCellularNetwork {
+                        streamOnCellularButton
+                    }
                 }
                 
                 Section(header: sectionHeader("Subtitles")) {
@@ -119,6 +122,15 @@ struct SettingsView: View {
         button(text: "Clear Cache Upon Exit", value: clearCacheText) {
             Session.removeCacheOnPlayerExit.toggle()
             clearCacheText = Session.removeCacheOnPlayerExit ? "On".localized : "Off".localized
+        }
+    }
+    
+    @State var streamOnCellularText = Session.streamOnCellular ? "On".localized : "Off".localized
+    @ViewBuilder
+    var streamOnCellularButton: some View {
+        button(text: "Stream on cellular network", value: streamOnCellularText) {
+            Session.streamOnCellular.toggle()
+            streamOnCellularText = Session.streamOnCellular ? "On".localized : "Off".localized
         }
     }
     

@@ -74,7 +74,6 @@
 		23446ABE267F1ED10049CC72 /* TVButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446ABD267F1ED10049CC72 /* TVButtonStyle.swift */; };
 		23446AC3267F24740049CC72 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446AC2267F24740049CC72 /* VisualEffectBlur.swift */; };
 		23446AC6267FAD000049CC72 /* PreloadTorrentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446AC5267FAD000049CC72 /* PreloadTorrentViewModel.swift */; };
-		23446AC8267FC5560049CC72 /* UIDevice+cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446AC7267FC5560049CC72 /* UIDevice+cellular.swift */; };
 		23446ACA26804AD20049CC72 /* TrailerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446AC926804AD20049CC72 /* TrailerButton.swift */; };
 		23446ACC26804AE80049CC72 /* TrailerButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446ACB26804AE80049CC72 /* TrailerButtonViewModel.swift */; };
 		23446ACE26804F9F0049CC72 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446ACD26804F9F0049CC72 /* PlayButton.swift */; };
@@ -249,7 +248,6 @@
 		23A2BDBD26BEDBBB004B864E /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446AC2267F24740049CC72 /* VisualEffectBlur.swift */; };
 		23A2BDBE26BEDBC2004B864E /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D2B39F26959C910077BBED /* StarRatingView.swift */; };
 		23A2BDC026BEDBC2004B864E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6E4CF1DFB17B400818A2C /* ProgressBar.swift */; };
-		23A2BDC126BEDBC2004B864E /* UIDevice+cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23446AC7267FC5560049CC72 /* UIDevice+cellular.swift */; };
 		23A2BDC226BEDBC2004B864E /* RotateAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C96EE32685DBC40056455E /* RotateAnimation.swift */; };
 		23A2BDC326BEDBC2004B864E /* BufferingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6E4D11DFB197E00818A2C /* BufferingBar.swift */; };
 		23A2BDC526BEDBDF004B864E /* Font+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D99956D1E5CE227005C432A /* Font+Style.swift */; };
@@ -258,7 +256,6 @@
 		23A2BDC826BEDBE7004B864E /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBE60891E5E49B200C2549B /* FileManager+Extension.swift */; };
 		23A2BDC926BEDBEA004B864E /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCBA5A1DC50D780046C755 /* Color+Extension.swift */; };
 		23A2BDCB26BEDBF5004B864E /* SubtitleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D990E271DC4F00F005CDE34 /* SubtitleSettings.swift */; };
-		23A2BDCE26BEDC09004B864E /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 23A2BDCD26BEDC09004B864E /* Reachability */; };
 		23A2BDCF26BEDC3E004B864E /* Show+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F9E441E705BD100860852 /* Show+Extension.swift */; };
 		23A2BDD026BEDC3E004B864E /* Subtitle + Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343A7602688718300B824E7 /* Subtitle + Identifiable.swift */; };
 		23A2BDD126BEDC3E004B864E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313B3E267E3D7600774A85 /* Session.swift */; };
@@ -324,7 +321,6 @@
 		23CD7956270CA02B00AE001C /* HideableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7953270CA02B00AE001C /* HideableView.swift */; };
 		23CD7957270DF81A00AE001C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313B17267E3A7F00774A85 /* SearchView.swift */; };
 		23CD7958270DF81E00AE001C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343A7652688AD5000B824E7 /* SearchViewModel.swift */; };
-		23D2B398269586810077BBED /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 23D2B397269586810077BBED /* Reachability */; };
 		23D2B3A026959C910077BBED /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D2B39F26959C910077BBED /* StarRatingView.swift */; };
 		23D4606926C7C1DD00D56978 /* MacModalWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4606826C7C1DC00D56978 /* MacModalWindow.swift */; };
 		23D770F226F7A2E700EA4C78 /* LoadExternalTorrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D770F126F7A2E700EA4C78 /* LoadExternalTorrentView.swift */; };
@@ -467,7 +463,6 @@
 		23446ABD267F1ED10049CC72 /* TVButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVButtonStyle.swift; sourceTree = "<group>"; };
 		23446AC2267F24740049CC72 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		23446AC5267FAD000049CC72 /* PreloadTorrentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadTorrentViewModel.swift; sourceTree = "<group>"; };
-		23446AC7267FC5560049CC72 /* UIDevice+cellular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+cellular.swift"; sourceTree = "<group>"; };
 		23446AC926804AD20049CC72 /* TrailerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerButton.swift; sourceTree = "<group>"; };
 		23446ACB26804AE80049CC72 /* TrailerButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerButtonViewModel.swift; sourceTree = "<group>"; };
 		23446ACD26804F9F0049CC72 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
@@ -516,6 +511,10 @@
 		23989FA626865A3500FEDA41 /* PlayerOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOptionsView.swift; sourceTree = "<group>"; };
 		23A2BD8026BC5AD2004B864E /* OperatingSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatingSystem.swift; sourceTree = "<group>"; };
 		23A2BD8426BE9A2E004B864E /* MediaRatingsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRatingsLoader.swift; sourceTree = "<group>"; };
+		23A7272528C7C93A00B25354 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/Library/PrivateFrameworks/Network.framework; sourceTree = DEVELOPER_DIR; };
+		23A7272928C7C98E00B25354 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		23A7272B28C7C9FA00B25354 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		23A7272D28C7CA1600B25354 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		23B0A01526B9818100844309 /* TorrentPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentPlayerView.swift; sourceTree = "<group>"; };
 		23B24D7D26CA963E00B8CD84 /* FullScreenContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenContent.swift; sourceTree = "<group>"; };
 		23B4F07627118CD2002C5662 /* VisibleToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleToolbarView.swift; sourceTree = "<group>"; };
@@ -573,7 +572,6 @@
 				23E8172D26950B56003258CC /* PopcornKit in Frameworks */,
 				232BB527269456BF005448AE /* Kingfisher in Frameworks */,
 				232BB5242694562C005448AE /* PopcornTorrent in Frameworks */,
-				23D2B398269586810077BBED /* Reachability in Frameworks */,
 				238F18EB283C3853004CC7CC /* TVVLCKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,7 +581,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23A2BDB626BEDB2C004B864E /* Kingfisher in Frameworks */,
-				23A2BDCE26BEDC09004B864E /* Reachability in Frameworks */,
 				23A2BDB426BEDA5F004B864E /* PopcornTorrent in Frameworks */,
 				238F18E8283C3842004CC7CC /* MobileVLCKit.xcframework in Frameworks */,
 				23A2BDB226BEDA5F004B864E /* PopcornKit in Frameworks */,
@@ -764,7 +761,6 @@
 				23446AB8267EF4FE0049CC72 /* PlainNavigationLinkButton.swift */,
 				23446ABD267F1ED10049CC72 /* TVButtonStyle.swift */,
 				23446AC2267F24740049CC72 /* VisualEffectBlur.swift */,
-				23446AC7267FC5560049CC72 /* UIDevice+cellular.swift */,
 				23C96EE32685DBC40056455E /* RotateAnimation.swift */,
 				23D2B39F26959C910077BBED /* StarRatingView.swift */,
 				4DD6E4D11DFB197E00818A2C /* BufferingBar.swift */,
@@ -946,6 +942,10 @@
 		F1EDDAB5F2E1772C41C22B7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23A7272928C7C98E00B25354 /* SystemConfiguration.framework */,
+				23A7272B28C7C9FA00B25354 /* SystemConfiguration.framework */,
+				23A7272D28C7CA1600B25354 /* SystemConfiguration.framework */,
+				23A7272528C7C93A00B25354 /* Network.framework */,
 				2349FE9F283AD72E00F0138C /* VLCKit.xcframework */,
 				23F331E8283AC92C00F9C002 /* TVVLCKit.xcframework */,
 				23F331EB283AC94300F9C002 /* MobileVLCKit.xcframework */,
@@ -978,7 +978,6 @@
 				232BB526269456BF005448AE /* Kingfisher */,
 				23507DC7269483310098CC12 /* ObjectMapper */,
 				23E8172C26950B56003258CC /* PopcornKit */,
-				23D2B397269586810077BBED /* Reachability */,
 			);
 			productName = "PopcornTimetvOS SwiftUI";
 			productReference = 23313AFD267E374F00774A85 /* PopcornTime (tvOS).app */;
@@ -1002,7 +1001,6 @@
 				23A2BDB126BEDA5F004B864E /* PopcornKit */,
 				23A2BDB326BEDA5F004B864E /* PopcornTorrent */,
 				23A2BDB526BEDB2C004B864E /* Kingfisher */,
-				23A2BDCD26BEDC09004B864E /* Reachability */,
 			);
 			productName = "PopcornTime (iOS)";
 			productReference = 237EC9FE26B8478100EE8B46 /* PopcornTime.app */;
@@ -1100,7 +1098,6 @@
 				232BB525269456BF005448AE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				232BB52A26946B47005448AE /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 				23166C052694F13800D87AD0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				23D2B396269586810077BBED /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 287B85351C9873A200EEF5C8 /* Products */;
 			projectDirPath = "";
@@ -1260,7 +1257,6 @@
 				2391BE7F26847B9800576CAD /* SelectTorrentQualityButton.swift in Sources */,
 				23025D93267E71BA00229559 /* MovieView.swift in Sources */,
 				23446ACC26804AE80049CC72 /* TrailerButtonViewModel.swift in Sources */,
-				23446AC8267FC5560049CC72 /* UIDevice+cellular.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1357,7 +1353,6 @@
 				23A2BDBD26BEDBBB004B864E /* VisualEffectBlur.swift in Sources */,
 				23A2BDD526BEDC50004B864E /* YoutubeApi.swift in Sources */,
 				23A2BDC526BEDBDF004B864E /* Font+Style.swift in Sources */,
-				23A2BDC126BEDBC2004B864E /* UIDevice+cellular.swift in Sources */,
 				23A2BD8A26BED9F6004B864E /* MoviesViewModel.swift in Sources */,
 				23A2BDBA26BEDB73004B864E /* DownloadProgressView.swift in Sources */,
 				236A11B626C6774500AFF1FD /* PlayerViewModel.swift in Sources */,
@@ -1737,6 +1732,10 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Debug;
 		};
@@ -1774,6 +1773,10 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Release;
 		};
@@ -2039,14 +2042,6 @@
 				minimumVersion = 4.2.0;
 			};
 		};
-		23D2B396269586810077BBED /* XCRemoteSwiftPackageReference "Reachability" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2097,16 +2092,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 232BB525269456BF005448AE /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		23A2BDCD26BEDC09004B864E /* Reachability */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 23D2B396269586810077BBED /* XCRemoteSwiftPackageReference "Reachability" */;
-			productName = Reachability;
-		};
-		23D2B397269586810077BBED /* Reachability */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 23D2B396269586810077BBED /* XCRemoteSwiftPackageReference "Reachability" */;
-			productName = Reachability;
 		};
 		23E8172C26950B56003258CC /* PopcornKit */ = {
 			isa = XCSwiftPackageProductDependency;
