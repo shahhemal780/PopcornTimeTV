@@ -14,11 +14,10 @@ class YoutubeApi {
         struct Streaming: Decodable {
             struct Formats: Decodable {
                 var url: URL
-                var qualityLabel: String?
+                var qualityLabel: String? // only for video tracks
                 var width: Int?
             }
             var formats: [Formats]?
-            var adaptiveFormats: [Formats]?
             var hlsManifestUrl: URL?
         }
         

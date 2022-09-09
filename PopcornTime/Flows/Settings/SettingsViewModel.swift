@@ -64,6 +64,6 @@ class SettingsViewModel: ObservableObject {
     }()
     
     var hasCellularNetwork: Bool {
-        return networkMonitor.currentPath.availableInterfaces.contains(where: {$0.type == .cellular })
+        return networkMonitor.currentPath.availableInterfaces.contains(where: {$0.type == .cellular }) || networkMonitor.currentPath.isExpensive
     }
 }
