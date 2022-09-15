@@ -9,6 +9,9 @@
 import SwiftUI
 import PopcornKit
 
+#if os(macOS)
+typealias NavigationView = NavigationStack // workaround to use NavigationStack on macOS as there are some bugs on ios/tvos with SeasonPickerButton - not working
+#endif
 
 @main
 struct PopcornTime: App {
@@ -42,10 +45,11 @@ struct PopcornTime: App {
 //            OpenCommand()
 //        })
 //        #endif
-//        .windowStyle(.hiddenTitleBar)
-//        .windowToolbarStyle(.unified(showsTitle: false))
         
         #if os(macOS)
+        .windowStyle(.hiddenTitleBar)
+        .windowToolbarStyle(.unifiedCompact(showsTitle: false))
+//        .windowToolbarStyle(.expanded)
 //        Settings {
 //            SettingsView()
 //        }

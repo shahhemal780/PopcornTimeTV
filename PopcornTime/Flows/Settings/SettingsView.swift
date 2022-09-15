@@ -41,7 +41,7 @@ struct SettingsView: View {
             #endif
             List() {
                 Section(header: sectionHeader("Player")) {
-                    themeSongVolumeButton
+//                    themeSongVolumeButton
                     removeCacheOnPlayerExitButton
                     qualityAlertButton
                     if viewModel.hasCellularNetwork {

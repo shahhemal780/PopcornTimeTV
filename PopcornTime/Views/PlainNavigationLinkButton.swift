@@ -14,7 +14,11 @@ fileprivate struct Theme {
 
 struct PlainNavigationLinkButton: View {
     private let theme = Theme()
+    #if os(tvOS)
     @Environment(\.isFocused) var focused: Bool
+    #elseif os(macOS) || os(iOS)
+    @State var focused: Bool = false
+    #endif
     let configuration: ButtonStyle.Configuration
     var onFocus: () -> Void = {}
 
@@ -24,6 +28,12 @@ struct PlainNavigationLinkButton: View {
             .scaleEffect(focused ? theme.scaleEffect : 1)
             #elseif os(macOS)
             .overlay(overlayColor)
+            .onHover { hover in
+                if hover {
+                    onFocus()
+                }
+                focused = hover
+            }
             #endif
             .foregroundColor((focused || configuration.isPressed) ? Color.primary : Color.appSecondary)
             .animation(.easeOut, value: focused)

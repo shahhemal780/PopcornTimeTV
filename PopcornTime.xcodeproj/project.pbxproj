@@ -326,8 +326,6 @@
 		23D770F226F7A2E700EA4C78 /* LoadExternalTorrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D770F126F7A2E700EA4C78 /* LoadExternalTorrentView.swift */; };
 		23D770F426F7A30800EA4C78 /* LoadExternalTorrentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D770F326F7A30800EA4C78 /* LoadExternalTorrentViewModel.swift */; };
 		23D770F826F7AB1300EA4C78 /* torrent_upload in Resources */ = {isa = PBXBuildFile; fileRef = 23D770F726F7AB1300EA4C78 /* torrent_upload */; };
-		23DB7E9A2709F3C10084397F /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB7E992709F3C10084397F /* NavigationView.swift */; };
-		23DB7E9C2709F3CD0084397F /* NavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB7E9B2709F3CD0084397F /* NavigationLink.swift */; };
 		23DBB51D26ADBF1400AAF824 /* DownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBB51C26ADBF1400AAF824 /* DownloadViewModel.swift */; };
 		23DC476226F66C43006E18D4 /* AppScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DC476126F66C43006E18D4 /* AppScheme.swift */; };
 		23DC476326F66C43006E18D4 /* AppScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DC476126F66C43006E18D4 /* AppScheme.swift */; };
@@ -535,8 +533,6 @@
 		23D770F126F7A2E700EA4C78 /* LoadExternalTorrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadExternalTorrentView.swift; sourceTree = "<group>"; };
 		23D770F326F7A30800EA4C78 /* LoadExternalTorrentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadExternalTorrentViewModel.swift; sourceTree = "<group>"; };
 		23D770F726F7AB1300EA4C78 /* torrent_upload */ = {isa = PBXFileReference; lastKnownFileType = folder; path = torrent_upload; sourceTree = "<group>"; };
-		23DB7E992709F3C10084397F /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
-		23DB7E9B2709F3CD0084397F /* NavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLink.swift; sourceTree = "<group>"; };
 		23DBB51C26ADBF1400AAF824 /* DownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewModel.swift; sourceTree = "<group>"; };
 		23DC476126F66C43006E18D4 /* AppScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScheme.swift; sourceTree = "<group>"; };
 		23E2A6C826EB8C3300F24931 /* TopShelfLinkOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopShelfLinkOpener.swift; sourceTree = "<group>"; };
@@ -770,8 +766,6 @@
 				23B24D7D26CA963E00B8CD84 /* FullScreenContent.swift */,
 				23BE4BF526C814650081D2AA /* VolumeSlider.swift */,
 				23BE4BF726C815790081D2AA /* AirplayView.swift */,
-				23DB7E992709F3C10084397F /* NavigationView.swift */,
-				23DB7E9B2709F3CD0084397F /* NavigationLink.swift */,
 				23CD7953270CA02B00AE001C /* HideableView.swift */,
 				23B4F07627118CD2002C5662 /* VisibleToolbarView.swift */,
 			);
@@ -1398,7 +1392,6 @@
 				237ECA4326B84A4200EE8B46 /* Locale+Langs.swift in Sources */,
 				23B24D7326CA76CB00B8CD84 /* Font+Style.swift in Sources */,
 				23B4F07E27135A4C002C5662 /* TorrentFileOpener.swift in Sources */,
-				23DB7E9C2709F3CD0084397F /* NavigationLink.swift in Sources */,
 				237ECA1926B8481800EE8B46 /* TermsOfServiceView.swift in Sources */,
 				23A2BD7826BC5923004B864E /* ShowView.swift in Sources */,
 				237ECA2E26B848F000EE8B46 /* ErrorView.swift in Sources */,
@@ -1471,7 +1464,6 @@
 				237ECA2426B8485300EE8B46 /* Session.swift in Sources */,
 				23B24D6D26CA715E00B8CD84 /* PreloadTorrentViewModel.swift in Sources */,
 				237ECA2526B8485F00EE8B46 /* MPMediaType.swift in Sources */,
-				23DB7E9A2709F3C10084397F /* NavigationView.swift in Sources */,
 				2304531D26BAFAC30050BCB8 /* TVButtonStyle.swift in Sources */,
 				23A10F4526C69C190062D9CE /* SelectTorrentQualityButton.swift in Sources */,
 				237ECA1E26B8482700EE8B46 /* MoviesViewModel.swift in Sources */,
@@ -1723,7 +1715,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = swiftui.PopcornTime;
@@ -1766,7 +1758,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = swiftui.PopcornTime;
 				PRODUCT_NAME = PopcornTime;

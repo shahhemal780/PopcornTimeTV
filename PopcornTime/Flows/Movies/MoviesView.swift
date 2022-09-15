@@ -51,7 +51,7 @@ struct MoviesView: View, MediaRatingsLoader {
         }
         #if os(macOS)
         .modifier(VisibleToolbarView(toolbarContent: { isVisible in
-            ToolbarItemGroup {
+            ToolbarItem(placement: .navigation) {
                 if isVisible {
                     filtersView
                 }

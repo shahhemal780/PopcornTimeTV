@@ -87,11 +87,11 @@ struct MovieDetailsView: View, MediaPosterLoader {
                         }
                 }
             }.onAppear {
-                viewModel.playSongTheme()
+//                viewModel.playSongTheme()
                 viewModel.load()
                 viewModel.trailerModel.error = $error // bind error for displaying
             }.onDisappear {
-                viewModel.stopTheme()
+//                viewModel.stopTheme()
             }
         .ignoresSafeArea()
     }

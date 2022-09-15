@@ -14,8 +14,6 @@ struct ShowDetailsView: View, MediaPosterLoader {
     let theme = Theme()
     
     @StateObject var viewModel: ShowDetailsViewModel
-    @State var showSeasonPicker: Bool = false
-    
     var show: Show {
         return viewModel.show
     }
@@ -114,14 +112,7 @@ struct ShowDetailsView: View, MediaPosterLoader {
                     }
             }
         }.onAppear {
-            if !showSeasonPicker {
-                viewModel.playSongTheme()
-                viewModel.load()
-            }
-        }.onDisappear {
-            if !showSeasonPicker {
-                viewModel.stopTheme()
-            }
+            viewModel.load()
         }
         .environmentObject(viewModel)
         .ignoresSafeArea()
@@ -208,27 +199,17 @@ struct ShowDetailsView: View, MediaPosterLoader {
     }
     
     var seasonsButton: some View {
-        ZStack {
-            NavigationLink(
-                destination: SeasonPickerView(viewModel: SeasonPickerViewModel(show: show), selectedSeasonNumber: $viewModel.currentSeason),
-                isActive: $showSeasonPicker,
-                label: {
-                    EmptyView()
-                })
-                .hidden()
-            
-            Button(action: {
-                showSeasonPicker = true
-            }, label: {
-                VStack {
-                    VisualEffectBlur() {
-                        Image("Seasons")
-                    }
-                    Text("Series")
+        NavigationLink(destination: {
+            SeasonPickerView(viewModel: .init(show: show), selectedSeasonNumber: $viewModel.currentSeason)
+        }) {
+            VStack {
+                VisualEffectBlur() {
+                    Image("Seasons")
                 }
-            })
-            .frame(width: theme.buttonWidth, height: theme.buttonHeight)
+                Text("Series")
+            }
         }
+        .frame(width: theme.buttonWidth, height: theme.buttonHeight)
     }
     
     var watchlistButton: some View {

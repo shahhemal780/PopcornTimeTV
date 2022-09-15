@@ -51,7 +51,9 @@ struct SearchView: View, CharacterHeadshotLoader {
         #if os(iOS)
         .navigationBarHidden(true)
         .onAppear {
-            isFocused = true
+            if viewModel.search.isEmpty {
+                isFocused = true
+            }
         }
         #endif
     }
@@ -69,10 +71,10 @@ struct SearchView: View, CharacterHeadshotLoader {
         #elseif os(tvOS)
         pickerView
         #elseif os(macOS)
-        pickerView
-            .pickerStyle(.segmented)
-            .frame(maxWidth: 200)
-            .padding()
+//        pickerView
+//            .pickerStyle(.segmented)
+//            .frame(maxWidth: 200)
+//            .padding()
         #endif
     }
     
@@ -210,6 +212,30 @@ struct SearchView_Previews: PreviewProvider {
         let searchView = SearchView()
 //        searchView.viewModel.movies = Movie.dummiesFromJSON()
 //        searchView.viewModel.isLoading = true
-        return searchView
+//        NavigationView {
+            searchView
+//        }
+//        return searchView
+    }
+}
+
+
+struct ProxySearchStateView: View {
+    @Environment(\.isSearching) var isSearching
+    @Environment(\.dismissSearch) private var dismissSearch
+
+    @Binding var searching: Bool
+    
+    var body: some View {
+        EmptyView()
+            .frame(width: 1)
+            .onChange(of: isSearching) { newValue in
+                searching = newValue
+            }
+            .onChange(of: searching) { newValue in
+                if newValue == false && isSearching == true {
+                    dismissSearch()
+                }
+            }
     }
 }
