@@ -14,7 +14,6 @@ struct MovieDetailsView: View, MediaPosterLoader {
     let theme = Theme()
     
     @StateObject var viewModel: MovieDetailsViewModel
-    @State var error: Error?
     
     var movie: Movie {
         return viewModel.movie
@@ -76,20 +75,20 @@ struct MovieDetailsView: View, MediaPosterLoader {
                         .padding(.top, 50)
                     }
                 }
-                if let error = error ?? viewModel.error {
+                if let error = viewModel.error ?? viewModel.trailerModel.error {
                     BannerView(error: error)
-                        .padding([.top, .trailing], 60)
+                        .padding([.trailing], theme.bannerTrailing)
+                        .padding([.top], theme.bannertop)
                         .transition(.move(edge: .top))
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                                self.error = nil
+                                viewModel.trailerModel.error = nil
                             }
                         }
                 }
             }.onAppear {
 //                viewModel.playSongTheme()
                 viewModel.load()
-                viewModel.trailerModel.error = $error // bind error for displaying
             }.onDisappear {
 //                viewModel.stopTheme()
             }
@@ -315,6 +314,8 @@ extension MovieDetailsView {
         let titleFont: Font = Font.system(size: value(tvOS: 76, macOS: 50), weight: .medium)
         let section1Height: CGFloat = value(tvOS: 960, macOS: 710)
         let rightSectionSpacing: CGFloat = value(tvOS: 50, macOS: 30)
+        let bannerTrailing: CGFloat = value(tvOS: 60, macOS: 60, compactSize: 20)
+        let bannertop: CGFloat = value(tvOS: 60, macOS: 60, compactSize: 100)
     }
 }
 

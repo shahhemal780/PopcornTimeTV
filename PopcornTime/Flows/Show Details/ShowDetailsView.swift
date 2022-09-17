@@ -101,13 +101,14 @@ struct ShowDetailsView: View, MediaPosterLoader {
                     .id(section2)
                 }
             }
-            if let error = viewModel.error {
+            if let error = viewModel.error ?? viewModel.trailerModel.error {
                 BannerView(error: error)
-                    .padding([.top, .trailing], 60)
+                    .padding([.trailing], theme.bannerTrailing)
+                    .padding([.top], theme.bannertop)
                     .transition(.move(edge: .top))
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                            viewModel.error = nil
+                            viewModel.trailerModel.error = nil
                         }
                     }
             }
@@ -174,6 +175,8 @@ struct ShowDetailsView: View, MediaPosterLoader {
     func actionButtons(scroll: ScrollViewProxy?) -> some View {
         HStack(spacing: 24) {
             if viewModel.didLoad {
+                TrailerButton(viewModel: viewModel.trailerModel)
+                
                 if let episode = viewModel.nextEpisodeToWatch() {
                     PlayButton(media: episode)
                 }
@@ -187,6 +190,7 @@ struct ShowDetailsView: View, MediaPosterLoader {
                 ProgressView()
                     .padding(.leading, 50)
                     .padding(.bottom, 40)
+                    .hideIfCompactSize()
             }
         }
         .buttonStyle(TVButtonStyle(onFocus: {
@@ -296,6 +300,8 @@ extension ShowDetailsView {
         let seasonFontSize: CGFloat = value(tvOS: 43, macOS: 21)
         let titleFont: Font = Font.system(size: value(tvOS: 76, macOS: 50), weight: .medium)
         let summaryMaxWidth: CGFloat = value(tvOS: 1200, macOS: 800)
+        let bannerTrailing: CGFloat = value(tvOS: 60, macOS: 60, compactSize: 20)
+        let bannertop: CGFloat = value(tvOS: 60, macOS: 60, compactSize: 100)
     }
 }
 
