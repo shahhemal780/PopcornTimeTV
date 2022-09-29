@@ -8,6 +8,7 @@
 
 import SwiftUI
 import PopcornKit
+import PopcornTorrent
 
 #if os(macOS)
 typealias NavigationView = NavigationStack // workaround to use NavigationStack on macOS as there are some bugs on ios/tvos with SeasonPickerButton - not working
@@ -29,6 +30,10 @@ struct PopcornTime: App {
                     #elseif os(tvOS)
                         .modifier(TopShelfLinkOpener())
                     #endif
+                        .onAppear {
+                            // bootstrap torrent session
+                            PTTorrentsSession.shared()
+                        }
                 }
             }
             .preferredColorScheme(.dark)

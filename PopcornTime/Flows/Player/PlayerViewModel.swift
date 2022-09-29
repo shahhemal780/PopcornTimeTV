@@ -111,6 +111,12 @@ class PlayerViewModel: NSObject, ObservableObject {
         }
     }
     
+    deinit {
+        if let observer = torrentStatusChangeObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+    }
+    
     func playOnAppear() {
         guard mediaplayer.state == .stopped || mediaplayer.state == .opening else { return }
         
