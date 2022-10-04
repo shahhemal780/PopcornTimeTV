@@ -32,7 +32,9 @@ struct PopcornTime: App {
                     #endif
                         .onAppear {
                             // bootstrap torrent session
-                            PTTorrentsSession.shared()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                                PTTorrentsSession.shared()
+                            }
                         }
                 }
             }

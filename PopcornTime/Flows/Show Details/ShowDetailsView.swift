@@ -18,9 +18,10 @@ struct ShowDetailsView: View, MediaPosterLoader {
         return viewModel.show
     }
     
-    @Namespace var section1
-    @Namespace var section2
-    @Namespace var section3
+    @Namespace var sectionInfo
+    @Namespace var sectionEpisodes
+    @Namespace var sectionWatched
+    @Namespace var sectionCast
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -55,7 +56,7 @@ struct ShowDetailsView: View, MediaPosterLoader {
                                     .padding(.bottom, 20)
                             }
                         }
-                        .id(section1)
+                        .id(sectionInfo)
                         #if os(tvOS)
                         .frame(idealHeight: 1010)
                         .padding([.leading, .trailing], 100)
@@ -73,7 +74,7 @@ struct ShowDetailsView: View, MediaPosterLoader {
                             EpisodesView(show: viewModel.show, episodes: viewModel.seasonEpisodes(), currentSeason: viewModel.currentSeason, currentEpisode: viewModel.latestUnwatchedEpisode, onFocus: {
                                 #if os(tvOS)
                                 withAnimation() {
-                                    scroll.scrollTo(section2, anchor: .top)
+                                    scroll.scrollTo(sectionEpisodes, anchor: .top)
                                 }
                                 #endif
                             })
@@ -86,10 +87,12 @@ struct ShowDetailsView: View, MediaPosterLoader {
                             alsoWatchedSection(scroll: scroll)
                                 #if os(tvOS)
                                 .focusSection()
+                                .id(sectionWatched)
                                 #endif
                         }
                         if viewModel.persons.count > 0 {
                             ActorsCrewView(persons: $viewModel.persons)
+                            .id(sectionCast)
                             #if os(tvOS)
                             .focusSection()
                             #endif
@@ -97,8 +100,7 @@ struct ShowDetailsView: View, MediaPosterLoader {
                     }
                     .padding([.bottom, .top], 30)
                     .background( show.episodes.isEmpty ? .clear : Color.init(white: 0, opacity: 0.3))
-//                    .padding(.top, 50)
-                    .id(section2)
+                    .id(sectionEpisodes)
                 }
             }
             if let error = viewModel.error ?? viewModel.trailerModel.error {
@@ -196,7 +198,7 @@ struct ShowDetailsView: View, MediaPosterLoader {
         .buttonStyle(TVButtonStyle(onFocus: {
             #if os(tvOS)
             withAnimation {
-                scroll?.scrollTo(section1, anchor: .top)
+                scroll?.scrollTo(sectionInfo, anchor: .top)
             }
             #endif
         }))
@@ -247,9 +249,16 @@ struct ShowDetailsView: View, MediaPosterLoader {
                                     .frame(width: theme.watchedSection.cellWidth)
                             })
                             .buttonStyle(PlainNavigationLinkButtonStyle(onFocus: {
-//                                withAnimation {
-//                                    scroll.scrollTo(section3, anchor: .top)
-//                                }
+                                #if os(tvOS)
+                                if show == viewModel.related.first {
+                                    // workaround for stupid apple focus sections that is causing a crash
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                        withAnimation {
+                                            scroll.scrollTo(sectionCast)
+                                        }
+                                    }
+                                }
+                                #endif
                             }))
                             .task {
                                 await loadPosterIfMissing(media: show, mediaPosters: $viewModel.related)
@@ -264,7 +273,6 @@ struct ShowDetailsView: View, MediaPosterLoader {
         }
         .frame(height: theme.watchedSection.height)
         .padding(0)
-        .id(section3)
         .background(
             Color(white: 0, opacity: 0.3)
                 .padding([.bottom], -10)

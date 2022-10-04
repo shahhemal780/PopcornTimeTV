@@ -380,7 +380,7 @@ extension PlayerViewModel: VLCMediaPlayerDelegate {
         progress.progress = mediaplayer.position
         
         let remaining = mediaplayer.remainingTime.flatMap({ Int($0.intValue / 1000) })
-        if let remaining = remaining, remaining >= -ShowUpNextDuration {
+        if let remaining = remaining, mediaplayer.position > 1.0, remaining >= -ShowUpNextDuration {
             if progress.showUpNext == false && progress.showUpNextProgress == 0 {
                 progress.showUpNext = true
                 progress.showUpNextProgress = 1.0
