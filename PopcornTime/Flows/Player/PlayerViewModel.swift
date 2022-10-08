@@ -308,7 +308,7 @@ class PlayerViewModel: NSObject, ObservableObject {
         #if os(tvOS)
         let delay: TimeInterval = 3
         #else
-        let delay: TimeInterval = 5
+        let delay: TimeInterval = 15
         #endif
         DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: idleWorkItem!)
     }
