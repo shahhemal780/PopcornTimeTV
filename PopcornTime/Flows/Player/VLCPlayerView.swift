@@ -12,7 +12,7 @@ import TVVLCKit
 typealias VLCPlayerView = VLCPlayerView_tvOS
 #elseif os(iOS)
 import MobileVLCKit
-typealias VLCPlayerView = VLCPlayerView_iOS
+typealias VLCPlayerView = ExternalDisplayWrapper
 #elseif os(macOS)
 import VLCKit
 typealias VLCPlayerView = VLCPlayerView_MAC
@@ -59,6 +59,17 @@ struct VLCPlayerView_MAC: NSViewRepresentable {
 #endif
 
 #if os(iOS)
+/// Show videoplayer on external monitor when is connected trough usb-c port
+struct ExternalDisplayWrapper: View {
+    var mediaplayer = VLCMediaPlayer()
+    
+    var body: some View {
+        SecondaryScreenDisplay {
+            VLCPlayerView_iOS(mediaplayer: mediaplayer)
+        }
+    }
+}
+
 struct VLCPlayerView_iOS: UIViewRepresentable {
     var mediaplayer = VLCMediaPlayer()
     

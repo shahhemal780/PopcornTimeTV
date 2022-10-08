@@ -42,6 +42,7 @@ struct PopcornTime: App {
             #if os(iOS)
             .accentColor(.white)
             .navigationViewStyle(StackNavigationViewStyle())
+            .modifier(SecondaryScreen())
             #endif
 //            .onAppear {
 //                TraktManager.shared.syncUserData()
