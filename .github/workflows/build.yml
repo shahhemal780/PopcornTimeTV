@@ -6,7 +6,7 @@ jobs:
   build-tvos:
     name: tvOS
 
-    runs-on: macOS-latest
+    runs-on: macOS-12
 
     steps:
     - uses: actions/checkout@v3.0.0
@@ -58,7 +58,7 @@ jobs:
   build-ios:
     name: iOS
 
-    runs-on: macOS-latest
+    runs-on: macOS-12
 
     steps:
     - uses: actions/checkout@v3.0.0
@@ -110,7 +110,7 @@ jobs:
   build-macos:
     name: macOS
 
-    runs-on: macOS-latest
+    runs-on: macOS-12
 
     steps:
     - uses: actions/checkout@v3.0.0
