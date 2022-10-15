@@ -90,6 +90,7 @@ struct PlainButton: View {
 
     var body: some View {
         configuration.label
+            .contentShape(Rectangle())
             .scaleEffect(focused || configuration.isPressed ? theme.scaleEffect : 1)
             .foregroundColor((focused || configuration.isPressed) ? .primary : .appGray)
             .animation(.easeOut, value: focused)

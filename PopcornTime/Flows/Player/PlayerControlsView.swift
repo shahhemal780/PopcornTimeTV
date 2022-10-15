@@ -127,6 +127,7 @@ struct PlayerControlsView: View {
                     AirplayView()
                         .frame(width: 40)
                     subtitlesButton
+                        .frame(width: 40)
                     Text(viewModel.progress.remainingTime)
                 }
                 .monospacedDigit()

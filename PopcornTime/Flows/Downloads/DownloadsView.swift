@@ -126,11 +126,11 @@ struct DownloadsView: View {
 
 extension DownloadsView {
     struct Theme {
-        let itemWidth: CGFloat = value(tvOS: 240, macOS: 200)
-        let itemHeight: CGFloat = value(tvOS: 420, macOS: 350)
+        let itemWidth: CGFloat = value(tvOS: 240, macOS: 200, compactSize: 160)
+        let itemHeight: CGFloat = value(tvOS: 420, macOS: 350, compactSize: 300)
         let downloadingSize: CGSize = value(tvOS: CGSize(width: 500, height: 400) , macOS: CGSize(width: 300, height: 200))
-        let itemSpacing: CGFloat = value(tvOS: 40, macOS: 30)
-        let leading: CGFloat = value(tvOS: 50, macOS: 50, compactSize: 20)
+        let itemSpacing: CGFloat = value(tvOS: 40, macOS: 30, compactSize: 10)
+        let leading: CGFloat = value(tvOS: 50, macOS: 50, compactSize: 10)
     }
 }
 

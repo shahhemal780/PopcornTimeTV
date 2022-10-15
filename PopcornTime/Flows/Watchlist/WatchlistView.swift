@@ -113,8 +113,8 @@ struct WatchlistView: View, MediaPosterLoader {
 extension WatchlistView {
     struct Theme {
         let itemWidth: CGFloat = value(tvOS: 240, macOS: 160)
-        let itemSpacing: CGFloat = value(tvOS: 40, macOS: 20)
-        let leading: CGFloat = value(tvOS: 50, macOS: 50)
+        let itemSpacing: CGFloat = value(tvOS: 40, macOS: 20, compactSize: 10)
+        let leading: CGFloat = value(tvOS: 50, macOS: 50, compactSize: 10)
     }
 }
 

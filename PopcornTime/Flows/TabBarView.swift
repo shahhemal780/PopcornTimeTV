@@ -57,7 +57,6 @@ struct TabBarView: View {
                     Text("Watchlist")
                 }
                 .tag(Selection.watchlist)
-                .hideIfCompactSize()
             SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
@@ -144,5 +143,7 @@ struct TabBarView: View {
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
+            .preferredColorScheme(.dark)
+            .tint(.white)
     }
 }

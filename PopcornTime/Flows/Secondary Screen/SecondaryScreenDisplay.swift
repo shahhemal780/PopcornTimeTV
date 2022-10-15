@@ -16,7 +16,7 @@ struct SecondaryScreenDisplay<Content: View>: View {
     @ViewBuilder
     var body: some View {
         if displayContent.isShowingOnExternalDisplay {
-            Color.gray
+            Color.init(white: 0.3)
                 .overlay {
                     VStack(spacing: 20) {
                         Text("Playing on external display")

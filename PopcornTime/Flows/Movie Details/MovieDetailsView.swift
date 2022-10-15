@@ -40,8 +40,15 @@ struct MovieDetailsView: View, MediaPosterLoader {
                             }
                             .padding(.leading, 10)
                             #if os(iOS)
-                            actionButtons(scroll: nil)
-                                .padding(.top, 10)
+                            if UIDevice.current.userInterfaceIdiom == .phone, UIScreen.main.bounds.width < UIScreen.main.bounds.height {
+                                ScrollView(.horizontal) {
+                                    actionButtons(scroll: nil)
+                                        .padding([.top, .bottom], 10)
+                                }
+                            } else {
+                                actionButtons(scroll: nil)
+                                    .padding(.top, 10)
+                            }
                             #endif
                         }
                         .padding(.leading, theme.leftSectionLeading)
@@ -163,9 +170,7 @@ struct MovieDetailsView: View, MediaPosterLoader {
             TrailerButton(viewModel: viewModel.trailerModel)
             PlayButton(media: movie)
             watchlistButton
-                .hideIfCompactSize()
             watchedButton
-                .hideIfCompactSize()
             DownloadButton(viewModel: viewModel.downloadModel)
         }
         .buttonStyle(TVButtonStyle(onFocus: {

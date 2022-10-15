@@ -52,8 +52,17 @@ struct ShowDetailsView: View, MediaPosterLoader {
                                         }
                                     })
                                     .frame(maxWidth: theme.summaryMaxWidth)
+                                #if os(iOS)
+                                if UIDevice.current.userInterfaceIdiom == .phone, UIScreen.main.bounds.width < UIScreen.main.bounds.height  {
+                                    ScrollView(.horizontal) {
+                                        actionButtons(scroll: scroll)
+                                            .padding(.bottom, 20)
+                                    }
+                                }
+                                #else
                                 actionButtons(scroll: scroll)
                                     .padding(.bottom, 20)
+                                #endif
                             }
                         }
                         .id(sectionInfo)
@@ -186,7 +195,6 @@ struct ShowDetailsView: View, MediaPosterLoader {
                     seasonsButton
                 }
                 watchlistButton
-                    .hideIfCompactSize()
             }
             if viewModel.isLoading {
                 ProgressView()
