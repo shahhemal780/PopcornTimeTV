@@ -74,4 +74,17 @@ extension View {
         self
         #endif
     }
+    
+    @ViewBuilder
+    func hideIfPhone() -> some View {
+        #if os(iOS)
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            
+        } else {
+            self
+        }
+        #else
+        self
+        #endif
+    }
 }

@@ -26,24 +26,31 @@ struct MovieDetailsView: View, MediaPosterLoader {
                 ScrollViewReader { scroll in
                     ScrollView {
                         VStack {
-                            Text(movie.title)
-                                .font(theme.titleFont)
-                                .padding(.bottom, 50)
-                                .padding(.top, 200)
-                                .padding(.leading, -theme.leftSectionLeading)
+                            Color.clear.overlay {
+                                Text(movie.title)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .minimumScaleFactor(0.01)
+                                    .font(theme.titleFont)
+                                    .lineLimit(2)
+                                    .multilineTextAlignment(.center)
+                                    
+                            }
+                            .padding(.bottom, 50)
+                            .padding(.top, 200)
+                            .padding(.leading, -theme.leftSectionLeading)
                                 
                             HStack(alignment: .top, spacing: 40) {
                                 leftSection
-                                    .hideIfCompactSize()
+                                    .hideIfPhone()
                                 rightSection(scroll: scroll)
                                 Spacer()
                             }
                             .padding(.leading, 10)
                             #if os(iOS)
-                            if UIDevice.current.userInterfaceIdiom == .phone, UIScreen.main.bounds.width < UIScreen.main.bounds.height {
+                            if UIDevice.current.userInterfaceIdiom == .phone {
                                 ScrollView(.horizontal) {
                                     actionButtons(scroll: nil)
-                                        .padding([.top, .bottom], 10)
+                                        .padding([.leading, .top, .bottom], 10)
                                 }
                             } else {
                                 actionButtons(scroll: nil)
@@ -53,7 +60,6 @@ struct MovieDetailsView: View, MediaPosterLoader {
                         }
                         .padding(.leading, theme.leftSectionLeading)
                         .frame(idealHeight: theme.section1Height)
-                        
                         .id(section1)
                         #if os(tvOS)
                         .focusSection()
@@ -79,7 +85,7 @@ struct MovieDetailsView: View, MediaPosterLoader {
                         .padding([.bottom], 30)
                         #endif
                         .background(Color.init(white: 1, opacity: 0.3))
-                        .padding(.top, 50)
+                        .padding(.top, theme.section1PaddingBottom)
                     }
                 }
                 if let error = viewModel.error ?? viewModel.trailerModel.error {
@@ -201,7 +207,7 @@ struct MovieDetailsView: View, MediaPosterLoader {
             ForEach(0..<certifications.count, id: \.self) { item in
                 certifications[item]
             }
-            .hideIfCompactSize()
+            .hideIfPhone()
             
             StarRatingView(rating: movie.rating / 20)
                 .frame(width: theme.starSize.width, height: theme.starSize.height)
@@ -316,8 +322,9 @@ extension MovieDetailsView {
                spacing: value(tvOS: 80, macOS: 30),
                leading: value(tvOS: 90, macOS: 50, compactSize: 20)) }
         let backgroundOpacity = value(tvOS: 0.3, macOS: 0.5)
-        let titleFont: Font = Font.system(size: value(tvOS: 76, macOS: 50), weight: .medium)
+        let titleFont: Font = Font.system(size: value(tvOS: 76, macOS: 50, compactSize: 40), weight: .medium)
         let section1Height: CGFloat = value(tvOS: 960, macOS: 710)
+        let section1PaddingBottom: CGFloat = value(tvOS: 50, macOS: 20)
         let rightSectionSpacing: CGFloat = value(tvOS: 50, macOS: 30)
         let bannerTrailing: CGFloat = value(tvOS: 60, macOS: 60, compactSize: 20)
         let bannertop: CGFloat = value(tvOS: 60, macOS: 60, compactSize: 100)
@@ -343,10 +350,10 @@ struct MovieDetailsView_Previews: PreviewProvider {
     }
     
     static func viewModel() -> MovieDetailsViewModel {
-        let movie = Movie.dummy()
+        let movie = Movie.dummiesFromJSON()[3]
         let viewModel = MovieDetailsViewModel(movie: movie)
-        viewModel.related = movie.related
-        viewModel.persons = movie.actors
+        viewModel.related = Movie.dummy().related
+        viewModel.persons = Movie.dummy().actors
         viewModel.didLoad = true
         return viewModel
     }

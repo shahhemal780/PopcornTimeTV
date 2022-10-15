@@ -34,11 +34,17 @@ struct ShowDetailsView: View, MediaPosterLoader {
                             HStack {
                                 Text(show.title)
                                     .font(theme.titleFont)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .minimumScaleFactor(0.01)
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(2)
                                     .padding(.bottom, 50)
                                     .padding(.top, 200)
-                                    .multilineTextAlignment(.center)
+
                                 Spacer()
+                                    .hideIfPhone()
                             }
+                            .frame(maxWidth: .infinity)
                             
                             VStack(alignment: .leading, spacing: 50) {
                                 
@@ -53,11 +59,14 @@ struct ShowDetailsView: View, MediaPosterLoader {
                                     })
                                     .frame(maxWidth: theme.summaryMaxWidth)
                                 #if os(iOS)
-                                if UIDevice.current.userInterfaceIdiom == .phone, UIScreen.main.bounds.width < UIScreen.main.bounds.height  {
+                                if UIDevice.current.userInterfaceIdiom == .phone {
                                     ScrollView(.horizontal) {
                                         actionButtons(scroll: scroll)
                                             .padding(.bottom, 20)
                                     }
+                                } else {
+                                    actionButtons(scroll: scroll)
+                                        .padding(.bottom, 20)
                                 }
                                 #else
                                 actionButtons(scroll: scroll)
@@ -107,7 +116,9 @@ struct ShowDetailsView: View, MediaPosterLoader {
                             #endif
                         }
                     }
+                    #if os(tvOS)
                     .padding([.bottom, .top], 30)
+                    #endif
                     .background( show.episodes.isEmpty ? .clear : Color.init(white: 0, opacity: 0.3))
                     .id(sectionEpisodes)
                 }
