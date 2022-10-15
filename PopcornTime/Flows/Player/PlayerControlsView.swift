@@ -57,16 +57,14 @@ struct PlayerControlsView: View {
         #if os(iOS)
         let multiplier = UIDevice.current.userInterfaceIdiom == .phone ? 0.8 : 1
         Spacer()
-        HStack(spacing: 50) {
+        HStack(spacing: 60) {
             Group {
-                rewindButton(width: 45 * multiplier)
+                rewindButton(width: 55 * multiplier, imageInset: 20)
                 playButton(width: 90 * multiplier, imageInset: 25)
-                forwardButton(width: 45 * multiplier)
-                    
+                forwardButton(width: 55 * multiplier, imageInset: 20)
             }
             .background {
                 Circle()
-                    .inset(by: -10)
                     .fill(Color(white: 0.2, opacity: 0.5))
             }
         }
@@ -250,13 +248,13 @@ struct PlayerControlsView: View {
     }
     
     @ViewBuilder
-    func rewindButton(width: CGFloat = 32) -> some View {
+    func rewindButton(width: CGFloat = 32, imageInset: CGFloat = 7) -> some View {
         Button {
             viewModel.rewind()
         } label: {
             Image("SkipBack30") //"Rewind"
                 .resizable()
-                .frame(width: width - 7, height: width - 7)
+                .frame(width: width - imageInset, height: width - imageInset)
                 .frame(width: width, height: width)
                 .contentShape(Rectangle())
         }
@@ -268,14 +266,14 @@ struct PlayerControlsView: View {
     }
     
     @ViewBuilder
-    func forwardButton(width: CGFloat = 32) -> some View {
+    func forwardButton(width: CGFloat = 32, imageInset: CGFloat = 7) -> some View {
         Button {
             viewModel.fastForward()
         } label: {
 //            Image("Fast Forward")
             Image("SkipForward30")
                 .resizable()
-                .frame(width: width - 7, height: width - 7)
+                .frame(width: width - imageInset, height: width - imageInset)
                 .frame(width: width, height: width)
                 .contentShape(Rectangle())
         }
@@ -308,6 +306,7 @@ struct PlayerControlsView: View {
                 .foregroundColor(.gray)
                 .padding(.top, 2)
                 .padding(.leading, -3)
+                .frame(width: 40)
         }
         .frame(width: 32)
     }

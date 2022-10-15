@@ -190,7 +190,7 @@ extension SubtitlesView {
         let contentFontSize: CGFloat = value(tvOS: 31, macOS: 19, compactSize: 16)
         let noLanguageFontSize: CGFloat = value(tvOS: 35, macOS: 23)
         let languageSectionWidth: CGFloat = value(tvOS: 390, macOS: 250, compactSize: 150)
-        let delaySectionWidth: CGFloat = value(tvOS: 0, macOS: 0, compactSize: 100)
+        let delaySectionWidth: CGFloat = value(tvOS: 0, macOS: 150, compactSize: 100)
         let textButtonSpacing: CGFloat = value(tvOS: 20, macOS: 20, compactSize: 5)
         let extendedSpacing: CGFloat = value(tvOS: 10, macOS: 10, compactSize: 0)
     }
