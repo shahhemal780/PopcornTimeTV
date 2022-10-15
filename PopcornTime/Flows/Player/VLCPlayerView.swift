@@ -64,8 +64,15 @@ struct ExternalDisplayWrapper: View {
     var mediaplayer = VLCMediaPlayer()
     
     var body: some View {
-        SecondaryScreenDisplay {
-            VLCPlayerView_iOS(mediaplayer: mediaplayer)
+        if #available(iOS 16.0, *) { // workaround to hide home indicator from bottom of the screen
+            SecondaryScreenDisplay {
+                VLCPlayerView_iOS(mediaplayer: mediaplayer)
+            }
+            .persistentSystemOverlays(.hidden)
+        } else {
+            SecondaryScreenDisplay {
+                VLCPlayerView_iOS(mediaplayer: mediaplayer)
+            }
         }
     }
 }
