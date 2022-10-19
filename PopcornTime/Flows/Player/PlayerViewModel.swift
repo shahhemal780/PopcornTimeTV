@@ -254,6 +254,11 @@ class PlayerViewModel: NSObject, ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.resetIdleTimer()
         }
+        #if os(macOS)
+        if showControls == false {
+            NSCursor.setHiddenUntilMouseMoves(true)
+        }
+        #endif
     }
 
     func endScrubbing() {

@@ -15,11 +15,31 @@ import MobileVLCKit
 typealias VLCPlayerView = ExternalDisplayWrapper
 #elseif os(macOS)
 import VLCKit
-typealias VLCPlayerView = VLCPlayerView_MAC
+typealias VLCPlayerView = VLCPlayerView_MACWrapper
 #endif
 
 
 #if os(macOS)
+
+struct VLCPlayerView_MACWrapper: View {
+    var mediaplayer: VLCMediaPlayer
+    @State var disableScreenSaverToken: NSObjectProtocol?
+    
+    var body: some View {
+        VLCPlayerView_MAC(mediaplayer: mediaplayer)
+            .onAppear {
+                disableScreenSaverToken = ProcessInfo.processInfo.beginActivity(options: .idleDisplaySleepDisabled, reason: "disable screen saver")
+                NSCursor.setHiddenUntilMouseMoves(true)
+            }
+            .onDisappear {
+                if let token = disableScreenSaverToken {
+                    ProcessInfo.processInfo.endActivity(token)
+                    disableScreenSaverToken = nil
+                }
+            }
+    }
+}
+
 struct VLCPlayerView_MAC: NSViewRepresentable {
     var mediaplayer = VLCMediaPlayer()
     
@@ -28,7 +48,7 @@ struct VLCPlayerView_MAC: NSViewRepresentable {
     
     func makeNSView(context: Context) -> NSView {
         let view = NSView()
-        fixFirstTimeInvalidSize(view: view)
+//        fixFirstTimeInvalidSize(view: view)
         return view
     }
     
