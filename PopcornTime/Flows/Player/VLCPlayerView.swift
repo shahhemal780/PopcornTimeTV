@@ -89,10 +89,12 @@ struct ExternalDisplayWrapper: View {
                 VLCPlayerView_iOS(mediaplayer: mediaplayer)
             }
             .persistentSystemOverlays(.hidden)
+            .ignoresSafeArea()
         } else {
             SecondaryScreenDisplay {
                 VLCPlayerView_iOS(mediaplayer: mediaplayer)
             }
+            .ignoresSafeArea()
         }
     }
 }

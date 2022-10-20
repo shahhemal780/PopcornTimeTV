@@ -275,6 +275,9 @@ struct PlayerView_Previews: PreviewProvider {
                 .background(Color.blue)
                 .environmentObject(loadingModel)
         }
+        #if os(iOS)
+        .environmentObject(ExternalDisplayContent())
+        #endif
     }
     
 //    static var dummyPreview: some View {
