@@ -342,6 +342,7 @@
 		23E623A026975AB6007B11EF /* Locale+Langs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0183A81DC3ACB400AB75B3 /* Locale+Langs.swift */; };
 		23E8172D26950B56003258CC /* PopcornKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23E8172C26950B56003258CC /* PopcornKit */; };
 		23E8172F26950B60003258CC /* PopcornKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23E8172E26950B60003258CC /* PopcornKit */; };
+		23E9742C290006BB002DB19A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313B1D267E3AB800774A85 /* SettingsView.swift */; };
 		23F0856E269787B300B341D0 /* DownloadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F0856D269787B300B341D0 /* DownloadsViewModel.swift */; };
 		23F125D026E3EC38008097C5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313B17267E3A7F00774A85 /* SearchView.swift */; };
 		23F125D126E3EC3E008097C5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343A7652688AD5000B824E7 /* SearchViewModel.swift */; };
@@ -1413,6 +1414,7 @@
 				23B24D7326CA76CB00B8CD84 /* Font+Style.swift in Sources */,
 				23B4F07E27135A4C002C5662 /* TorrentFileOpener.swift in Sources */,
 				237ECA1926B8481800EE8B46 /* TermsOfServiceView.swift in Sources */,
+				23E9742C290006BB002DB19A /* SettingsView.swift in Sources */,
 				23A2BD7826BC5923004B864E /* ShowView.swift in Sources */,
 				237ECA2E26B848F000EE8B46 /* ErrorView.swift in Sources */,
 				2356F694272DC1E80039DB75 /* TorrentHealth.swift in Sources */,

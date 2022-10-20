@@ -58,10 +58,14 @@ struct PopcornTime: App {
         .windowStyle(.hiddenTitleBar)
         .windowToolbarStyle(.unifiedCompact(showsTitle: false))
 //        .windowToolbarStyle(.expanded)
-//        Settings {
-//            SettingsView()
-//        }
         #endif
+        
+        #if os(macOS)
+        Settings {
+            SettingsView()
+        }
+        #endif
+
     }
 
 // in order do exit app on window close
