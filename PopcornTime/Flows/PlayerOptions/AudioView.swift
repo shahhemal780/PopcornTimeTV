@@ -86,9 +86,11 @@ struct AudioView: View {
                         }
                     }
                 }
-                .onAppear(perform: {
-                    scroll.scrollTo(currentDelay, anchor: .center)
-                })
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                        scroll.scrollTo(currentDelay, anchor: .center)
+                    }
+                }
             }
             
         }

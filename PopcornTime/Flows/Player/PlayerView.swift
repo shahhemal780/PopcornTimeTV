@@ -12,99 +12,21 @@ import PopcornKit
 struct PlayerView: View {
     @EnvironmentObject var viewModel: PlayerViewModel
     @Environment(\.dismiss) var dismiss
+    var upNextView: UpNextView?
     
-    @Namespace private var namespace
     #if os(tvOS)
+    @Namespace private var namespace
     @Environment(\.resetFocus) var resetFocus
     @State var playerHasFocus = true // workaround to make infoView to have focus on appear
     #endif
-    var upNextView: UpNextView?
     
     var body: some View {
         ZStack {
             VLCPlayerView(mediaplayer: viewModel.mediaplayer)
             #if os(tvOS)
-                .addGestures(onSwipeDown: {
-                    guard !viewModel.progress.showUpNext else { return }
-                    withAnimation {
-                        viewModel.showInfo = true
-                    }
-                }, onSwipeUp: {
-                    guard !viewModel.progress.showUpNext else { return }
-                    withAnimation {
-                        viewModel.showControls = true
-                    }
-                }, onPositionSliderDrag: { offset in
-                    viewModel.handlePositionSliderDrag(offset: offset)
-                })
-                .focusable(playerHasFocus)
-                .prefersDefaultFocus(!viewModel.showInfo, in: namespace)
-                .onLongPressGesture(minimumDuration: 0.01, perform: {
-                    withAnimation {
-                        if viewModel.showControls {
-                            viewModel.clickGesture()
-                        } else {
-                            viewModel.toggleControlsVisible()
-                        }
-                    }
-                })
-                .onPlayPauseCommand {
-                    withAnimation {
-                        viewModel.playandPause()
-                    }
-                }
-                .onMoveCommand(perform: { direction in
-                    switch direction {
-                    case .down:
-                        withAnimation(.spring()) {
-                            viewModel.showInfo = true
-                        }
-                    case .up:
-                        withAnimation {
-                            viewModel.showControls = true
-                        }
-                        viewModel.resetIdleTimer()
-                    case .left:
-                        if viewModel.showControls {
-                            viewModel.rewind()
-                            viewModel.progress.hint = .rewind
-                            viewModel.resetIdleTimer()
-                        }
-                    case .right:
-                        if viewModel.showControls {
-                            viewModel.fastForward()
-                            viewModel.progress.hint = .fastForward
-                            viewModel.resetIdleTimer()
-                        }
-                    @unknown default:
-                        break
-                    }
-                })
-                .onExitCommand {
-                    if viewModel.showInfo {
-                        withAnimation{
-                            viewModel.showInfo = false
-                        }
-                    } else if viewModel.showControls {
-                        withAnimation{
-                            viewModel.showControls = false
-                        }
-                    } else {
-                        viewModel.stop()
-                        dismiss()
-                    }
-                }
+                .addGestures(viewModel: viewModel, dismiss: dismiss, playerHasFocus: playerHasFocus, namespace: namespace)
             #else
-                .ignoresSafeArea()
-                .onTapGesture {
-                    withAnimation {
-                        if viewModel.showInfo == true {
-                            viewModel.showInfo = false
-                        } else {
-                            viewModel.toggleControlsVisible()
-                        }
-                    }
-                }
+                .addGestures(viewModel: viewModel, dismiss: dismiss)
             #endif
             controlsView
             showInfoView
@@ -130,10 +52,6 @@ struct PlayerView: View {
         if !viewModel.isLoading && viewModel.showControls {
             #if os(tvOS)
             VStack {
-//                if viewModel.showInfo {
-//                    Image("Now Playing Info")
-//                        .padding(.top, 40)
-//                }
                 Spacer()
                 ZStack {
                     Rectangle()

@@ -177,6 +177,9 @@
 		2391BE7D268475A200576CAD /* DownloadButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391BE7C268475A200576CAD /* DownloadButtonViewModel.swift */; };
 		2391BE7F26847B9800576CAD /* SelectTorrentQualityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391BE7E26847B9800576CAD /* SelectTorrentQualityButton.swift */; };
 		2391BE81268496E300576CAD /* Media + Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391BE80268496E300576CAD /* Media + Download.swift */; };
+		2395A1EE2903172A00DA8720 /* PlayerControlGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A1ED2903172A00DA8720 /* PlayerControlGestures.swift */; };
+		2395A1EF2903172A00DA8720 /* PlayerControlGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A1ED2903172A00DA8720 /* PlayerControlGestures.swift */; };
+		2395A1F02903172A00DA8720 /* PlayerControlGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A1ED2903172A00DA8720 /* PlayerControlGestures.swift */; };
 		23989FA726865A3500FEDA41 /* PlayerOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23989FA626865A3500FEDA41 /* PlayerOptionsView.swift */; };
 		23A10F3D26C699CD0062D9CE /* DownloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23313B1B267E3AAB00774A85 /* DownloadsView.swift */; };
 		23A10F3E26C699D00062D9CE /* DownloadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F0856D269787B300B341D0 /* DownloadsViewModel.swift */; };
@@ -512,6 +515,7 @@
 		2391BE7C268475A200576CAD /* DownloadButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButtonViewModel.swift; sourceTree = "<group>"; };
 		2391BE7E26847B9800576CAD /* SelectTorrentQualityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTorrentQualityButton.swift; sourceTree = "<group>"; };
 		2391BE80268496E300576CAD /* Media + Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Media + Download.swift"; sourceTree = "<group>"; };
+		2395A1ED2903172A00DA8720 /* PlayerControlGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlGestures.swift; sourceTree = "<group>"; };
 		23989FA626865A3500FEDA41 /* PlayerOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOptionsView.swift; sourceTree = "<group>"; };
 		23A2BD8026BC5AD2004B864E /* OperatingSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatingSystem.swift; sourceTree = "<group>"; };
 		23A2BD8426BE9A2E004B864E /* MediaRatingsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRatingsLoader.swift; sourceTree = "<group>"; };
@@ -851,6 +855,7 @@
 				23BEFC9B26D79862008EDC44 /* PlayerSubtitleModel.swift */,
 				23446AD62680BBE80049CC72 /* VLCPlayerView.swift */,
 				23446ADE2680E8600049CC72 /* ProgressBarView.swift */,
+				2395A1ED2903172A00DA8720 /* PlayerControlGestures.swift */,
 				23BE4BF326C7F57C0081D2AA /* PlayerControlsView.swift */,
 				23313B33267E3C0000774A85 /* UpNextView.swift */,
 			);
@@ -1170,6 +1175,7 @@
 				23C4AD2C26FF4EEE007B8E09 /* RatingsOverlayView.swift in Sources */,
 				2343A7662688AD5000B824E7 /* SearchViewModel.swift in Sources */,
 				23313B34267E3C0000774A85 /* UpNextView.swift in Sources */,
+				2395A1EE2903172A00DA8720 /* PlayerControlGestures.swift in Sources */,
 				2343A7612688718300B824E7 /* Subtitle + Identifiable.swift in Sources */,
 				23313B2C267E3BAC00774A85 /* EpisodesView.swift in Sources */,
 				23E6239F26975A0C007B11EF /* FileManager+Extension.swift in Sources */,
@@ -1346,6 +1352,7 @@
 				23A2BD8F26BED9FA004B864E /* ShowView.swift in Sources */,
 				23BE4BF626C814650081D2AA /* VolumeSlider.swift in Sources */,
 				23A2BD9326BEDA07004B864E /* TrailerButton.swift in Sources */,
+				2395A1EF2903172A00DA8720 /* PlayerControlGestures.swift in Sources */,
 				23A2BDC926BEDBEA004B864E /* Color+Extension.swift in Sources */,
 				23BEFC9D26D79862008EDC44 /* PlayerSubtitleModel.swift in Sources */,
 				23A2BD8926BED9EE004B864E /* TabBarView.swift in Sources */,
@@ -1479,6 +1486,7 @@
 				2304532626BAFB1A0050BCB8 /* DownloadButtonViewModel.swift in Sources */,
 				23B24D6C26CA6DAE00B8CD84 /* TorrentPlayerView.swift in Sources */,
 				2358EC482792CA6300C79643 /* PlayTorrentEpisode.swift in Sources */,
+				2395A1F02903172A00DA8720 /* PlayerControlGestures.swift in Sources */,
 				23B24D7B26CA78F400B8CD84 /* VLCPlayerView.swift in Sources */,
 				23B24D6E26CA717200B8CD84 /* PlayerViewModel.swift in Sources */,
 				23B4F07727118CD2002C5662 /* VisibleToolbarView.swift in Sources */,
