@@ -87,8 +87,6 @@ class DownloadButtonViewModel: NSObject, ObservableObject {
         if download?.downloadStatus == .failed {
             state = .normal
             showDownloadFailedAlert = true
-        } else {
-            download?.save()
         }
     }
     

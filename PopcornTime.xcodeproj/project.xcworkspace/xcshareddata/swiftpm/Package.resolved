@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/onevcat/Kingfisher",
         "state": {
           "branch": null,
-          "revision": "017f94ccfdacabb1ae7f45b75b4217b24c06e6ac",
-          "version": "7.4.0"
+          "revision": "44e891bdb61426a95e31492a67c7c0dfad1f87c5",
+          "version": "7.4.1"
         }
       },
       {
@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/alextud/PopcornTorrent",
         "state": {
           "branch": "v2_2",
-          "revision": "8db97ac7ecbe1e0c031ba4493147f0315409bc2e",
+          "revision": "3b85fdd6eb6185626b64c378f9d560a06dab1780",
           "version": null
         }
       },
