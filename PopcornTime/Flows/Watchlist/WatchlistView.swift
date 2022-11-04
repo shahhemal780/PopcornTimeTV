@@ -27,10 +27,6 @@ struct WatchlistView: View, MediaPosterLoader {
             }
             .onAppear {
                 viewModel.load()
-                Task { @MainActor in 
-                    await TraktApi.shared.refreshWatchlist()
-                    viewModel.load()
-                }
             }
         }
         #if os(iOS)

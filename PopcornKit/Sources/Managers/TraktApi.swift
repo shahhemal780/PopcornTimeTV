@@ -347,9 +347,9 @@ open class TraktApi {
         }
     }
     
-    open func refreshWatchlist() async {
-        _ = try? await WatchlistManager<Movie>.movie.refreshWatchlist()
-        _ = try? await WatchlistManager<Show>.show.refreshWatchlist()
+    open func refreshWatchlist() async throws {
+        _ = try await WatchlistManager<Movie>.movie.refreshWatchlist()
+        _ = try await WatchlistManager<Show>.show.refreshWatchlist()
     }
     
     /**
