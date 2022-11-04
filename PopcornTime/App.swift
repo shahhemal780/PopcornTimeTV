@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import PopcornKit
 import PopcornTorrent
 
 #if os(macOS)
@@ -44,9 +43,6 @@ struct PopcornTime: App {
             .navigationViewStyle(StackNavigationViewStyle())
             .modifier(SecondaryScreen())
             #endif
-//            .onAppear {
-//                TraktManager.shared.syncUserData()
-//            }
         }
 //        #if os(iOS) || os(macOS)
 //        .commands(content: {
