@@ -41,7 +41,7 @@ struct AudioView: View {
     let sounds = EqualizerProfiles.allCases
     
     var body: some View {
-        HStack (spacing: 50) {
+        HStack (spacing: theme.sectionSpacing) {
             Spacer()
             delaySection
                 .frame(maxWidth: 300)
@@ -86,9 +86,11 @@ struct AudioView: View {
                         }
                     }
                 }
-                .onAppear(perform: {
-                    scroll.scrollTo(currentDelay, anchor: .center)
-                })
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                        scroll.scrollTo(currentDelay, anchor: .center)
+                    }
+                }
             }
             
         }
@@ -145,14 +147,14 @@ struct AudioView: View {
         Text(text.localized.uppercased())
             .font(.system(size: theme.sectionFontSize, weight: .bold))
             .foregroundColor(.appGray)
-            .padding(.leading, 50)
+            .padding(.leading, theme.sectionLeading)
     }
     
     func button(text: String, isSelected: Bool, onFocus: @escaping () -> Void, action: @escaping () -> Void) -> some View {
         Button(action: {
             action()
         }, label: {
-            HStack(spacing: 20) {
+            HStack(spacing: theme.textButtonSpacing) {
                 if (isSelected) {
                     Image(systemName: "checkmark")
                 } else {
@@ -167,9 +169,13 @@ struct AudioView: View {
 
 extension AudioView {
     struct Theme {
-        let sectionFontSize: CGFloat = value(tvOS: 32, macOS: 20)
-        let contentFontSize: CGFloat = value(tvOS: 31, macOS: 19)
+        let sectionLeading: CGFloat = value(tvOS: 50, macOS: 50, compactSize: 5)
+        let sectionSpacing: CGFloat = value(tvOS: 50, macOS: 50, compactSize: 5)
+        let sectionFontSize: CGFloat = value(tvOS: 32, macOS: 20, compactSize: 17)
+        let contentFontSize: CGFloat = value(tvOS: 31, macOS: 19, compactSize: 16)
         let languageSectionWidth: CGFloat = value(tvOS: 390, macOS: 250)
+        let textButtonSpacing: CGFloat = value(tvOS: 20, macOS: 20, compactSize: 5)
+
     }
 }
 

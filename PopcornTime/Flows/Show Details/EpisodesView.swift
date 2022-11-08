@@ -28,7 +28,9 @@ struct EpisodesView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            #if os(tvOS)
             titleView
+            #endif
             episodesCountView
             ScrollViewReader { scroll in
                 ScrollView(.horizontal) {

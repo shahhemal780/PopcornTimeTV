@@ -19,7 +19,7 @@ import VLCKit
 struct PlayerOptionsView: View {
     let theme = Theme()
     var media: Media?
-    @State var selectedTab = Selection.info
+    @State var selectedTab = Selection.subtitles
     @Binding var audioDelay: Int
     @Binding var audioProfile: EqualizerProfiles
     @Binding var subtitleDelay: Int
@@ -96,7 +96,7 @@ struct PlayerOptionsView: View {
         .frame(maxWidth: 1024, maxHeight: theme.maxHeight)
         .padding(.bottom, 20)
         .background(VisualEffectBlur().cornerRadius(10))
-        .padding(.horizontal, 50)
+        .padding(.horizontal, theme.horizontalSpacing)
         .padding(.top, 40)
     }
     #endif
@@ -105,6 +105,7 @@ struct PlayerOptionsView: View {
 extension PlayerOptionsView {
     struct Theme {
         let maxHeight: CGFloat = value(tvOS: 440, macOS: 280)
+        let horizontalSpacing: CGFloat = value(tvOS: 50, macOS: 50, compactSize: 0)
     }
 }
 
@@ -113,6 +114,7 @@ struct PlayerOptionsView_Previews: PreviewProvider {
         Group {
             VStack {
                 PlayerOptionsView(media: Movie.dummy(),
+                                  selectedTab: PlayerOptionsView.Selection.subtitles,
                                   audioDelay: .constant(0),
                                   audioProfile: .constant(.fullDynamicRange),
                                   subtitleDelay: .constant(0),
@@ -125,7 +127,7 @@ struct PlayerOptionsView_Previews: PreviewProvider {
             
             VStack {
                 PlayerOptionsView(media: Movie.dummy(),
-                                  selectedTab: PlayerOptionsView.Selection.subtitles,
+                                  selectedTab: PlayerOptionsView.Selection.info,
                                   audioDelay: .constant(0),
                                   audioProfile: .constant(.fullDynamicRange),
                                   subtitleDelay: .constant(0),

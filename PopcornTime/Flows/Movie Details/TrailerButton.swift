@@ -33,7 +33,7 @@ struct TrailerButton: View {
             }
         })
         .frame(width: theme.buttonWidth, height: theme.buttonHeight)
-        .fullScreenContent(isPresented: $showPlayer, title: viewModel.movie.title) {
+        .fullScreenContent(isPresented: $showPlayer, title: viewModel.media.title) {
             trailerVideo
         }
     }
@@ -68,13 +68,15 @@ struct TrailerButton: View {
     }
     
     func showTrailer() {
+        viewModel.error = nil
         Task {
-            viewModel.error.wrappedValue = nil
             do {
                 try await viewModel.loadTrailerUrl()
                 self.showPlayer = true
             } catch {
-                viewModel.error.wrappedValue = error
+                DispatchQueue.main.async {
+                    viewModel.error = error
+                }
             }
         }
     }

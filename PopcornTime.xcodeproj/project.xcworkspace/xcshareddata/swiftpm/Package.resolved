@@ -32,8 +32,8 @@
         "package": "PopcornTorrent",
         "repositoryURL": "https://github.com/alextud/PopcornTorrent",
         "state": {
-          "branch": "v2_1",
-          "revision": "6f82bd95652f709846dcb2ab58b13395be0b7441",
+          "branch": "v2_2",
+          "revision": "26aa79bdb86ddd3d7defa1cf429347fc7058ad8d",
           "version": null
         }
       },
