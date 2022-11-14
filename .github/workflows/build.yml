@@ -46,14 +46,20 @@ jobs:
         gunzip ldid-osx.gz
         chmod +x ldid-osx
         ./ldid-osx -S Payload/PopcornTime\ \(tvOS\).app/PopcornTime\ \(tvOS\)
-        zip -r popcorn_time_tvos.ipa Payload
+        zip -r PopcornTime-tvOS.ipa Payload
         
     - name: Upload
       uses: actions/upload-artifact@v3.0.0
       with:
-        name: 'popcorn_time_tvos'
+        name: 'PopcornTime-tvOS'
         path: |
-          popcorn_time_tvos.ipa
+          PopcornTime-tvOS.ipa
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: PopcornTime-tvOS.ipa
           
   build-ios:
     name: iOS
@@ -98,14 +104,20 @@ jobs:
         gunzip ldid-osx.gz
         chmod +x ldid-osx
         ./ldid-osx -S Payload/PopcornTime.app/PopcornTime
-        zip -r popcorn_time_ios.ipa Payload
+        zip -r PopcornTime-iOS.ipa Payload
         
     - name: Upload
       uses: actions/upload-artifact@v3.0.0
       with:
-        name: 'popcorn_time_ios'
+        name: 'PopcornTime-iOS'
         path: |
-          popcorn_time_ios.ipa
+          PopcornTime-iOS.ipa
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: PopcornTime-iOS.ipa
 
   build-macos:
     name: macOS
@@ -149,11 +161,17 @@ jobs:
       run: |
         mkdir Payload
         cp -r ~/Library/Developer/Xcode/Archives/*/*/Products/Applications/ Payload
-        zip -r popcorn_time_mac.zip Payload
+        zip -r PopcornTime-macOS.zip Payload
         
     - name: Upload
       uses: actions/upload-artifact@v3.0.0
       with:
-        name: 'popcorn_time_mac'
+        name: 'PopcornTime-macOS'
         path: |
-          popcorn_time_mac.zip
+          PopcornTime-macOS.zip
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: PopcornTime-macOS.zip
