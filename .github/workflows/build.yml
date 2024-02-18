@@ -1,6 +1,9 @@
 name: CI
 
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: '0 12 * 1-12/2 *' # “At 12:00 in every 2nd month from January through December.”
 
 jobs:
   build-tvos:
