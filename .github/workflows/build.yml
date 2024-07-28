@@ -3,7 +3,7 @@ name: CI
 on:
   push:
   schedule:
-    - cron: '0 12 * 1-12/2 *' # “At 12:00 in every 2nd month from January through December.”
+    - cron: '0 0 1 * *' # "At 00:00 on the 1st of every month"
 
 jobs:
   build-tvos:
