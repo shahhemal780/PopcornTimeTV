@@ -9,20 +9,20 @@ jobs:
   build-tvos:
     name: tvOS
 
-    runs-on: macOS-12
+    runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3.0.0
+    - uses: actions/checkout@v4
         
     - name: "Get cache: VLC"
-      uses: actions/cache@v3.0.0
+      uses: actions/cache@v4
       id: cache
       with:
         path: |
           VLCKit
         key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}-tv
         
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4
       name: "Get cache: SPM"
       with:
         path: ~/Library/Developer/Xcode/DerivedData/PopcornTime*/SourcePackages/
@@ -52,14 +52,14 @@ jobs:
         zip -r PopcornTime-tvOS.ipa Payload
         
     - name: Upload
-      uses: actions/upload-artifact@v3.0.0
+      uses: actions/upload-artifact@v4
       with:
         name: 'PopcornTime-tvOS'
         path: |
           PopcornTime-tvOS.ipa
 
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: PopcornTime-tvOS.ipa
@@ -67,20 +67,20 @@ jobs:
   build-ios:
     name: iOS
 
-    runs-on: macOS-12
+    runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3.0.0
+    - uses: actions/checkout@v4
         
     - name: Get cache
-      uses: actions/cache@v3.0.0
+      uses: actions/cache@v4
       id: cache
       with:
         path: |
           VLCKit
         key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}-ios
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4
       name: "Get cache: SPM"
       with:
         path: ~/Library/Developer/Xcode/DerivedData/PopcornTime*/SourcePackages/
@@ -110,14 +110,14 @@ jobs:
         zip -r PopcornTime-iOS.ipa Payload
         
     - name: Upload
-      uses: actions/upload-artifact@v3.0.0
+      uses: actions/upload-artifact@v4
       with:
         name: 'PopcornTime-iOS'
         path: |
           PopcornTime-iOS.ipa
 
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: PopcornTime-iOS.ipa
@@ -125,20 +125,20 @@ jobs:
   build-macos:
     name: macOS
 
-    runs-on: macOS-12
+    runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3.0.0
+    - uses: actions/checkout@v4
         
     - name: "Get cache: VLC"
-      uses: actions/cache@v3.0.0
+      uses: actions/cache@v4
       id: cache
       with:
         path: |
           VLCKit
         key: ${{ hashFiles('VLCKit/get-vlc-frameworks.sh') }}-macos
         
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4
       name: "Get cache: SPM"
       with:
         path: ~/Library/Developer/Xcode/DerivedData/PopcornTime*/SourcePackages/
@@ -167,14 +167,14 @@ jobs:
         zip -r PopcornTime-macOS.zip Payload
         
     - name: Upload
-      uses: actions/upload-artifact@v3.0.0
+      uses: actions/upload-artifact@v4
       with:
         name: 'PopcornTime-macOS'
         path: |
           PopcornTime-macOS.zip
 
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: PopcornTime-macOS.zip
