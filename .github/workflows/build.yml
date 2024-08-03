@@ -146,8 +146,8 @@ jobs:
         restore-keys: |
             ${{ runner.os }}-spm-${{ hashFiles('PopcornTime.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
                 
-    - name: Select Xcode version
-      run: sudo xcode-select -s '/Applications/Xcode_14.1.app/Contents/Developer'
+    # - name: Select Xcode version
+    #   run: sudo xcode-select -s '/Applications/Xcode_14.1.app/Contents/Developer'
 
     - name: Compile
       run: |
