@@ -13,6 +13,12 @@ PopcornTimeTV is an Apple TV, iPhone, iPad and Mac application to torrent movies
 
 Build instructions:
 
+```
+fork to own repo
+commit any change
+go to Actions and download .ipa
+```
+
 ``` bash
 $ git clone https://github.com/alextud/PopcornTimeTV.git
 $ cd PopcornTimeTV/
